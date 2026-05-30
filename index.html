@@ -105,11 +105,16 @@ margin:8px 0;
 /* CARDS */
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:25px;
 }
 
+.card{
+width:220px;
+}      
+    
 .card{
 background:white;
 border-radius:25px;
@@ -221,13 +226,14 @@ gap:15px;
 }
 
 .disco{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
 }
 
 .album{
-    width:280px;
+    width:180px;
 }
 
 .album{
@@ -264,10 +270,6 @@ gap:15px;
 
 .album p{
     padding:0 20px;
-}
-.break{
-    flex-basis:100%;
-    height:0;
 }
 
 </style>
@@ -458,7 +460,7 @@ Album disponible depuis le 29 mai 2026.
 <li>Toi</li>
 </ul>
 </details>
-<div class="break"></div>    
+
 </div>
 
 
