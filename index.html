@@ -221,9 +221,15 @@ gap:15px;
 }
 
 .disco{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    display:flex;
+    flex-wrap:wrap;
     gap:30px;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.album{
+    width:280px;
 }
 
 .album{
