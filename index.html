@@ -221,11 +221,9 @@ gap:15px;
 }
 
 .disco{
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
-    justify-content:center;
-    align-items:flex-start;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .album{
@@ -267,6 +265,11 @@ gap:15px;
 .album p{
     padding:0 20px;
 }
+.break{
+    flex-basis:100%;
+    height:0;
+}
+
 </style>
 </head>
 <body>
@@ -455,9 +458,9 @@ Album disponible depuis le 29 mai 2026.
 <li>Toi</li>
 </ul>
 </details>
+<div class="break"></div>    
 </div>
-    
-</div>
+
 
 <div class="album">
 <img src="https://i.ibb.co/DDsDf5VG/2MN97.jpg">
@@ -483,9 +486,7 @@ Album disponible depuis le 29 mai 2026.
 </ul>
 </details>
 </div>
-
-    
-    
+   
 <div class="album">
 <img src="https://i.ibb.co/GQFwTvSX/Ma-vie.jpg">
 
