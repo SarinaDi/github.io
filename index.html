@@ -105,16 +105,11 @@ margin:8px 0;
 /* CARDS */
 
 .cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
 }
-
-.card{
-width:220px;
-}      
-    
+       
 .card{
 background:white;
 border-radius:25px;
@@ -127,10 +122,11 @@ transition:.3s;
 transform:translateY(-5px);
 }
 
-.card img{
-width:100%;
-height:260px;
-object-fit:cover;
+.card img,
+.album img{
+    width:100%;
+    height:auto;
+    display:block;
 }
 
 .card-content{
@@ -226,14 +222,9 @@ gap:15px;
 }
 
 .disco{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
-}
-
-.album{
-    width:180px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
 }
 
 .album{
