@@ -293,6 +293,27 @@ gap:15px;
 .album p{
     padding:0 20px;
 }
+
+.latest-release{
+    display:flex;
+    align-items:flex-start;
+    gap:30px;
+}
+
+.album-cover{
+    width:250px;
+    border-radius:20px;
+}
+
+.latest-text{
+    flex:1;
+}
+
+.spotify-player{
+    flex-shrink:0;
+}
+
+    
 #actualites,
 #discographie,
 #plateformes,
@@ -321,34 +342,36 @@ gap:15px;
 
 <h2>💿 Dernière sortie</h2>
 
-<div class="featured">
+<div class="latest-release">
 
-<img src="https://i.ibb.co/fYF1JJbm/Sans-titre.jpg" alt="Celle que je suis">
+    <img class="album-cover"
+    src="https://i.ibb.co/fYF1JJbm/Sans-titre.jpg"
+    alt="Celle que je suis">
 
-<div>
+    <div class="latest-text">
+        <h3>Celle que je suis</h3>
 
-<h3>Celle que je suis</h3>
+        <p>Album disponible depuis le 29 mai 2026.</p>
 
-<p>
-Album disponible depuis le 29 mai 2026.
-</p>
+        <ul>
+            <li>🎵 On a qu'une vie</li>
+            <li>🎵 Avant de partir</li>
+            <li>🎵 Libre comme l'air</li>
+        </ul>
+    </div>
 
-<ul class="tracklist">
-<li>🎵 On a qu'une vie</li>
-<li>🎵 Avant de partir</li>
-<li>🎵 Libre comme l'air</li>
-</ul>
-<iframe
-style="border-radius:12px;margin-top:15px;"
-src="https://open.spotify.com/embed/album/3NSVQUNbGTejmmuPu7323S?utm_source=generator"
-width="100%"
-height="352"
-frameborder="0"
-allowfullscreen=""
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-loading="lazy">
-</iframe>
-</div>
+    <div class="spotify-player">
+        <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/album/3NSVQUNbGTejmmuPu7323S?utm_source=generator"
+        width="300"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+        </iframe>
+    </div>
 
 </div>
 
