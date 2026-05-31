@@ -338,12 +338,15 @@ gap:15px;
     margin-bottom:10px;
 }
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
 .latest-release{
+    display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
+    gap:20px;
+    padding:20px;
 }
 
 .album-cover{
@@ -351,18 +354,26 @@ gap:15px;
 }
 
 .latest-text{
-    margin-left:0 !important;
+    margin:0;
     max-width:100%;
 }
 
 .latest-text ul{
     text-align:left;
     display:inline-block;
+    margin-top:15px;
+}
+
+.spotify-player{
+    width:100%;
+    display:flex;
+    justify-content:center;
 }
 
 .spotify-player iframe{
     width:100%;
     max-width:320px;
+    height:352px;
 }
 
 }
