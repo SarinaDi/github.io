@@ -230,21 +230,42 @@ margin-top:50px;
 font-weight:bold;
 }
 
-@media(max-width:900px){
+@media (max-width:768px){
 
-.featured{
-flex-direction:column;
-text-align:center;
+.latest-release{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:20px;
+    padding:20px;
 }
 
-.featured img{
-width:100%;
-max-width:350px;
+.album-cover{
+    width:220px;
 }
 
-nav{
-flex-wrap:wrap;
-gap:15px;
+.latest-text{
+    margin:0;
+    max-width:100%;
+}
+
+.latest-text ul{
+    text-align:left;
+    display:inline-block;
+    margin-top:15px;
+}
+
+.spotify-player{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.spotify-player iframe{
+    width:100%;
+    max-width:320px;
+    height:352px;
 }
 
 }
@@ -338,45 +359,7 @@ gap:15px;
     margin-bottom:10px;
 }
 
-@media (max-width:768px){
 
-.latest-release{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:20px;
-    padding:20px;
-}
-
-.album-cover{
-    width:220px;
-}
-
-.latest-text{
-    margin:0;
-    max-width:100%;
-}
-
-.latest-text ul{
-    text-align:left;
-    display:inline-block;
-    margin-top:15px;
-}
-
-.spotify-player{
-    width:100%;
-    display:flex;
-    justify-content:center;
-}
-
-.spotify-player iframe{
-    width:100%;
-    max-width:320px;
-    height:352px;
-}
-
-}
     
 </style>
 </head>
