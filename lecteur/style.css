@@ -67,7 +67,14 @@ body{
     letter-spacing:4px;
 
 }
-
+.book-container{
+    min-height:calc(100vh - 80px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px;
+    box-sizing:border-box;
+}
 .book-header h2{
     margin-top:12px;
     font-size:34px;
