@@ -116,39 +116,57 @@ flex-direction:column;
 gap:60px;
 align-items:center;
 }
+
 .story{
- margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px;
+    width:100%;
+    max-width:1200px;
+    margin:auto;
 }
+
+.story.reverse{
+    flex-direction:row-reverse;
+}
+
 .story img{
-    width:550px;
-    max-width:100%;
-    height:auto;
-    display:block;
-    filter:drop-shadow(0 25px 60px rgba(0,0,0,.7));
-    transition:all .4s ease;
-    margin-bottom:20px
+    width:360px;
+    transition:.4s;
+    filter:
+    drop-shadow(0 30px 60px rgba(0,0,0,.8));
 }
+
 .story img:hover{
+    transform:
+    translateY(-15px)
+    scale(1.04);
+}
 
-transform:
-translateY(-15px)
-scale(1.05);
+.story-text{
+    flex:1;
+    text-align:left;
+}
 
+.story-text h2{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.story-text h3{
+    color:#d7b7ff;
+    margin-bottom:30px;
+    font-size:1.5rem;
+}
+
+.story-text p{
+    font-size:1.2rem;
+    line-height:2;
+    color:#e6e6e6;
+    max-width:500px;
 }
   
-.story h2{
-font-size:2.3rem;
-margin-top:10px;
-margin-bottom:8px;
-color:#fff;
-}
-.story h3{
-margin-top:0;
-margin-bottom:18px;
-font-size:1.2rem;
-color:#e6bfd8;
-font-weight:400;
-}
 .separator{
 width:250px;
 height:2px;
@@ -206,6 +224,24 @@ font-size:18px;
 width:180px;
 }
   
+.story,
+.story.reverse{
+    flex-direction:column;
+    text-align:center;
+}
+
+.story-text{
+    text-align:center;
+}
+
+.story-text p{
+    margin:auto;
+}
+
+.story img{
+    width:300px;
+}  
+  
 @keyframes glow{
 0%,100%{
 filter:drop-shadow(0 0 15px rgba(255,215,120,.25));
@@ -244,19 +280,42 @@ filter:drop-shadow(0 0 35px rgba(255,215,120,.55));
 <div class="container">
 
 <section class="story">
-<img src="kaelnayia.png" alt="Kaël & Nayia">
-<h2>🔥 Kaël & Nayia</h2>
-<h3>Saga : Le Prince des Enfers</h3>
-<a class="button" href="kael-et-nayia.html">📖 Découvrir l'histoire</a>
+    <img src="kaelnayia.png" alt="Kaël & Nayia">
+    <div class="story-text">
+        <h2>🔥 Kaël & Nayia</h2>
+        <h3>Saga : Le Prince des Enfers</h3>
+        <p>
+            Lui est le Prince des Enfers.<br>
+            Elle est la lumière qu'il n'aurait jamais dû rencontrer.<br><br>
+            Leur amour défie les royaumes, les prophéties…
+            et le destin lui-même.
+        </p>
+        <a class="button" href="kael-et-nayia.html">
+            📖 Découvrir l'histoire
+        </a>
+    </div>
+
 </section>
   
 <div class="separator">
 </div>  
-<section class="story">
-<img src="kylianalya.png" alt="Kylian & Alya">
-<h2>✨ Kylian & Alya</h2>
-<h3>Saga : Les Enfants des Étoiles</h3>
-<a class="button" href="kylian-et-alya.html">📖 Découvrir l'histoire</a>
+  
+<section class="story reverse">
+    <img src="kylianalya.png" alt="Kylian & Alya">
+    <div class="story-text">
+        <h2>✨ Kylian & Alya</h2>
+        <h3>Saga : Les Enfants des Étoiles</h3>
+        <p>
+            Dans un monde où les étoiles parlent,
+            deux âmes liées par un mystère oublié.<br><br>
+            Leur rencontre pourrait bien changer
+            l'équilibre de l'univers.
+        </p>
+        <a class="button" href="kylian-et-alya.html">
+            📖 Découvrir l'histoire
+        </a>
+    </div>
+
 </section>
 
 </div>
