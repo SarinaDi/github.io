@@ -30,8 +30,8 @@ body{
 .book{
     position: relative;
     display: flex;
-    width: 1280px;
-    height: 820px;
+    width:min(1400px,90vw);
+    height:820px;
     background: #f8f3e8;
     border-radius: 14px;
     overflow: hidden;
