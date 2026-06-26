@@ -39,20 +39,54 @@ backdrop-filter:blur(10px);
 }
 nav a{color:#ffd7ea;text-decoration:none;font-weight:bold}
 nav a:hover{color:#fff}
-header{
+.hero{
 text-align:center;
-padding:80px 20px 50px;
+padding:90px 20px 70px;
 }
-header h1{
+
+.hero-title{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+}
+
+.hero h1{
+margin:0;
 font-size:72px;
-margin-bottom:15px;
+font-family:Georgia,serif;
+letter-spacing:6px;
 color:#f6d28f;
+text-shadow:
+0 0 10px rgba(255,215,120,.4),
+0 0 30px rgba(255,190,80,.2);
 }
-header p{
-max-width:800px;
-margin:auto;
+
+.hero h2{
+margin:0;
+font-size:30px;
+font-family:Georgia,serif;
+font-weight:400;
+letter-spacing:12px;
+color:#f4dcb2;
+}
+
+.hero p{
+max-width:850px;
+margin:45px auto 0;
+font-size:22px;
 line-height:1.8;
-color:#d8d8d8;
+color:#dddddd;
+}
+
+.line{
+width:260px;
+height:2px;
+background:linear-gradient(
+to right,
+transparent,
+#d8b16b,
+transparent);
 }
 .container{
 max-width:1200px;
@@ -125,9 +159,21 @@ text-align:center;
 color:#bfbfbf;
 }
 @media(max-width:768px){
-header h1{font-size:2.4rem}
-.story h2{font-size:1.8rem}
-nav{gap:14px}
+.hero h1{
+font-size:44px;
+}
+
+.hero h2{
+font-size:20px;
+letter-spacing:8px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.line{
+width:180px;
 }
 </style>
 </head>
@@ -143,9 +189,20 @@ nav{gap:14px}
 <a href="index.html#contact">Contact</a>
 </nav>
 
-<header>
-<h1>📖 Les histoires de Ninayia</h1>
-<p>Chaque chanson raconte une histoire. Choisissez l'univers que vous souhaitez explorer.</p>
+<header class="hero">
+
+    <div class="hero-title">
+        <div class="line"></div>
+        <h1>LES HISTOIRES</h1>
+        <h2>DE NINAYIA</h2>
+        <div class="line"></div>
+    </div>
+
+    <p>
+        Chaque chanson raconte une histoire.<br>
+        Choisissez l'univers que vous souhaitez explorer.
+    </p>
+
 </header>
 
 <div class="container">
