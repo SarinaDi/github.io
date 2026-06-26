@@ -39,9 +39,28 @@ backdrop-filter:blur(10px);
 }
 nav a{color:#ffd7ea;text-decoration:none;font-weight:bold}
 nav a:hover{color:#fff}
+  
 .hero{
-text-align:center;
-padding:90px 20px 70px;
+    text-align:center;
+    padding:60px 20px 40px;
+}
+
+.titre-image{
+    width:100%;
+    max-width:900px;
+    display:block;
+    margin:auto;
+    filter:drop-shadow(0 0 25px rgba(255,210,120,.35));
+    animation:glow 4s ease-in-out infinite;
+}
+
+.intro{
+    max-width:800px;
+    margin:35px auto 0;
+    font-size:22px;
+    line-height:1.8;
+    color:#ececec;
+    text-shadow:0 0 10px rgba(0,0,0,.7);
 }
 
 .hero-title{
@@ -171,10 +190,29 @@ letter-spacing:8px;
 .hero p{
 font-size:18px;
 }
+  
+.titre-image{
+max-width:95%;
+}
 
+.intro{
+font-size:18px;
+}
+  
 .line{
 width:180px;
 }
+  
+@keyframes glow{
+0%,100%{
+filter:drop-shadow(0 0 15px rgba(255,215,120,.25));
+}
+
+50%{
+filter:drop-shadow(0 0 35px rgba(255,215,120,.55));
+}
+
+}  
 </style>
 </head>
 <body>
