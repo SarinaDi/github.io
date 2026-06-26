@@ -28,16 +28,15 @@ body{
 }
 
 .book{
-    position:relative;
-    display:flex;
-    background:#f8f3e8;
-    border-radius:12px;
-    overflow:hidden;
+    position: relative;
+    display: flex;
+    width: 1280px;
+    height: 820px;
+    background: #f8f3e8;
+    border-radius: 14px;
+    overflow: hidden;
     box-shadow:
-        0 35px 90px rgba(0,0,0,.55);
-    width:1200px;
-    height:760px;
-
+        0 45px 100px rgba(0,0,0,.60);
 }
 
 /* ---------- TITRES ---------- */
