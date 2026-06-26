@@ -36,15 +36,17 @@ body{
     gap:40px;
 }
 .cover-image{
-    width:420px;
+    width:450px;
+    max-width:90%;
     transition:.4s;
+    box-shadow:0 35px 80px rgba(0,0,0,.55);
     cursor:pointer;
     filter:
         drop-shadow(0 25px 45px rgba(0,0,0,.55));
 }
 .cover-image:hover{
-    transform:
-        scale(1.03);
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 60px 120px rgba(0,0,0,.7);
 }
 #openBook{
     padding:16px 40px;
