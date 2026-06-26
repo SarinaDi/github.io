@@ -27,6 +27,34 @@ body{
 
     padding:80px 0;
 }
+.cover-screen{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+.cover-image{
+    width:420px;
+    transition:.4s;
+    cursor:pointer;
+    filter:
+        drop-shadow(0 25px 45px rgba(0,0,0,.55));
+}
+.cover-image:hover{
+    transform:
+        scale(1.03);
+}
+#openBook{
+    padding:16px 40px;
+    border-radius:50px;
+    border:2px solid #c9a66b;
+    background:none;
+    color:#c9a66b;
+    font-size:22px;
+    cursor:pointer;
+}
 
 .book{
     position:relative;
