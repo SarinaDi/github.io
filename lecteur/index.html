@@ -3,99 +3,100 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lecteur - Les Histoires de Ninayia</title>
+    <title>Lecteur - Les Histoires de Ninayia</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-<div class="cover-screen">
 
-    <img src="images/cover-kael-nayia-tome1.webp"
-         class="cover-image">
+    <!-- ================= COUVERTURE ================= -->
 
-    <button id="openBook">
-        Ouvrir le livre
-    </button>
+    <div class="cover-screen" id="coverScreen">
 
-</div>
+        <img
+            src="images/cover-kael-nayia-tome1.webp"
+            alt="Couverture Tome I"
+            class="cover-image">
 
-<div class="reader" id="reader">
+        <button id="openBook">
+            📖 Ouvrir le livre
+        </button>
 
-    ...
-    ton livre...
-    ...
+    </div>
 
-</div>
-<div class="reader">
-    
-<div class="book">
-    <div class="spine"></div>
+    <!-- ================= LIVRE ================= -->
 
-    <!-- PAGE GAUCHE -->
+    <div class="reader" id="reader">
 
-    <div class="page left-page">
+        <div class="book">
 
-        <div class="book-header">
+            <div class="spine"></div>
 
-            <p class="saga">
-                Kaël & Nayia
-            </p>
+            <!-- ================= PAGE GAUCHE ================= -->
 
-            <p class="subtitle">
-                Saga : Le Prince des Enfers
-            </p>
+            <div class="page left-page">
 
-            <h1>Tome I</h1>
+                <div class="book-header">
 
-            <h2>Le Prince des Enfers</h2>
+                    <p class="saga">
+                        Kaël & Nayia
+                    </p>
+
+                    <p class="subtitle">
+                        Saga : Le Prince des Enfers
+                    </p>
+
+                    <h1>Tome I</h1>
+
+                    <h2>Le Prince des Enfers</h2>
+
+                </div>
+
+            </div>
+
+            <!-- ================= PAGE DROITE ================= -->
+
+            <div class="page right-page">
+
+                <div class="chapter">
+
+                    <p class="chapter-number">
+                        Chapitre I
+                    </p>
+
+                    <h3>
+                        Une paix fragile
+                    </h3>
+
+                    <div class="separator"></div>
+
+                    <p>
+
+Le royaume des Enfers n'était jamais réellement silencieux.
+
+Même lorsque les flammes semblaient s'endormir, les anciennes pierres murmuraient encore les souvenirs des âmes qui avaient traversé leurs portes.
+
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
-<!-- PAGE DROITE -->
-
-<div class="page right-page">
-
-    <div class="chapter">
-
-        <p class="chapter-number">
-            Chapitre I
-        </p>
-
-        <h3>Une paix fragile</h3>
-
-        <div class="separator"></div>
-
-        <p>
-
-Le royaume des Enfers n'était jamais réellement silencieux.
-
-Même lorsque les flammes semblaient s'endormir,
-les anciennes pierres murmuraient encore les souvenirs
-des âmes qui avaient traversé leurs portes.
-
-        </p>
-
-    </div>
-
-</div>
-
-</div>
-
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
