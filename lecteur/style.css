@@ -22,9 +22,13 @@ body{
 /* ---------- LIVRE ---------- */
 
 .reader{
-    width:100%;
-    max-width:900px;
-
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:60px 0;
+    box-sizing:border-box;
 }
 
 .book{
