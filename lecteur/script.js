@@ -1,10 +1,10 @@
-const cover = document.querySelector(".cover-screen");
+const cover = document.getElementById("coverScreen");
 const reader = document.getElementById("reader");
+const button = document.getElementById("openBook");
 
-document.getElementById("openBook").addEventListener("click", () => {
+button.addEventListener("click", () => {
 
     cover.style.display = "none";
-
     reader.style.display = "flex";
 
 });
