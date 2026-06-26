@@ -1,1 +1,165 @@
+/* ---------- RESET ---------- */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ---------- PAGE ---------- */
+
+body{
+
+    background:#1a1628;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    font-family:"Cormorant Garamond",serif;
+
+    padding:40px;
+
+}
+
+/* ---------- LIVRE ---------- */
+
+.reader{
+
+    width:100%;
+    max-width:900px;
+
+}
+
+.book{
+
+    background:#f8f3e8;
+
+    border-radius:10px;
+
+    border:2px solid #c7a86d;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.55);
+
+    padding:70px;
+
+}
+
+/* ---------- TITRES ---------- */
+
+.book-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.saga{
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    color:#842b2b;
+
+}
+
+.subtitle{
+
+    margin-top:10px;
+
+    font-size:22px;
+
+    color:#666;
+
+}
+
+.book-header h1{
+
+    margin-top:45px;
+
+    font-size:56px;
+
+    letter-spacing:4px;
+
+}
+
+.book-header h2{
+
+    margin-top:12px;
+
+    font-size:34px;
+
+    font-weight:500;
+
+}
+
+/* ---------- CHAPITRE ---------- */
+
+.chapter{
+
+    font-size:28px;
+
+    line-height:2;
+
+    color:#2d2d2d;
+
+}
+
+.chapter-number{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:10px;
+
+}
+
+.chapter h3{
+
+    text-align:center;
+
+    font-size:44px;
+
+    margin-bottom:30px;
+
+}
+
+/* ---------- SÉPARATEUR ---------- */
+
+.separator{
+
+    width:220px;
+
+    height:2px;
+
+    background:#c7a86d;
+
+    margin:0 auto 40px;
+
+}
+
+/* ---------- LETTRINE ---------- */
+
+.chapter p:last-child::first-letter{
+
+    float:left;
+
+    font-size:90px;
+
+    line-height:.8;
+
+    padding-right:10px;
+
+    color:#a57228;
+
+    font-weight:bold;
+
+}
