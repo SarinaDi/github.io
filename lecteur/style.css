@@ -3,13 +3,27 @@
 /* ================================================= */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    font-family:"Cormorant Garamond",serif;
+
 }
 
 /* ================================================= */
@@ -18,17 +32,19 @@ html{
 
 :root{
 
-    --gold:#c79b45;
-    --gold-light:#f3d287;
-    --gold-dark:#8f6b2b;
+    --background:#120e23;
 
     --paper:#f8f3e8;
 
-    --text:#2d2d2d;
+    --paper-dark:#ece3d2;
+
+    --text:#2b2b2b;
+
+    --gold:#c79b45;
+
+    --gold-light:#f3d287;
 
     --shadow:rgba(0,0,0,.55);
-
-    --background:#120e23;
 
 }
 
@@ -38,29 +54,23 @@ html{
 
 body{
 
-    min-height:100vh;
-
-    overflow:hidden;
-
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 
-    font-family:"Cormorant Garamond",serif;
-
     background:
 
-        linear-gradient(
+    linear-gradient(
 
-            rgba(18,14,35,.55),
+        rgba(18,14,35,.55),
 
-            rgba(18,14,35,.72)
+        rgba(18,14,35,.72)
 
-        ),
+    ),
 
-        url("../images/fond-bibliotheque.png");
+    url("../images/fond-bibliotheque.png");
 
     background-size:cover;
 
@@ -92,9 +102,9 @@ body{
 
     align-items:center;
 
-    gap:30px;
+    gap:40px;
 
-    transition:opacity .8s ease;
+    transition:opacity .8s;
 
 }
 
@@ -110,31 +120,29 @@ body{
 
     position:absolute;
 
-    width:650px;
+    width:700px;
 
-    height:650px;
+    height:700px;
 
     border-radius:50%;
 
     background:
 
-        radial-gradient(
+    radial-gradient(
 
-            circle,
+        circle,
 
-            rgba(255,190,70,.18),
+        rgba(255,200,90,.18),
 
-            rgba(255,190,70,.08),
+        rgba(255,200,90,.08),
 
-            transparent 70%
+        transparent 70%
 
-        );
+    );
 
-    filter:blur(40px);
+    filter:blur(45px);
 
     animation:halo 6s ease-in-out infinite;
-
-    z-index:-1;
 
 }
 
@@ -148,23 +156,21 @@ body{
 
     cursor:pointer;
 
-    animation:floatBook 5s ease-in-out infinite;
-
     transition:
 
-        transform 1s ease,
+    transform 1s,
 
-        filter 1s ease,
+    filter 1s;
 
-        opacity .8s ease;
+    animation:floatBook 5s ease-in-out infinite;
 
     filter:
 
-        drop-shadow(
+    drop-shadow(
 
-            0 30px 45px rgba(0,0,0,.55)
+        0 30px 45px rgba(0,0,0,.55)
 
-        );
+    );
 
 }
 
@@ -172,9 +178,9 @@ body{
 
     transform:
 
-        translateY(-12px)
+    translateY(-12px)
 
-        scale(1.03);
+    scale(1.03);
 
 }
 
@@ -184,28 +190,18 @@ body{
 
     transform:
 
-        perspective(1800px)
+    perspective(1800px)
 
-        rotateY(-35deg)
+    rotateY(-35deg)
 
-        translateX(-70px)
+    translateX(-70px)
 
-        scale(1.18);
-
-    filter:
-
-        brightness(1.2)
-
-        drop-shadow(
-
-            0 0 70px rgba(255,210,120,.70)
-
-        );
+    scale(1.18);
 
 }
 
 /* ================================================= */
-/* BOUTON OUVRIR */
+/* BOUTON */
 /* ================================================= */
 
 .open-button{
@@ -216,37 +212,31 @@ body{
 
     border:none;
 
-    outline:none;
-
     cursor:pointer;
 
     background:
 
-        url("../images/button-frame.png")
+    url("../images/button-frame.png")
 
-        center center
+    center center
 
-        /100% 100%
+    /100% 100%
 
-        no-repeat;
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:32px;
-
-    font-weight:600;
+    no-repeat;
 
     color:var(--gold-light);
 
-    text-shadow:
+    font-size:32px;
 
-        0 0 12px rgba(255,220,120,.35);
+    font-family:"Cormorant Garamond",serif;
+
+    font-weight:600;
 
     transition:
 
-        transform .35s,
+    transform .3s,
 
-        filter .35s;
+    filter .3s;
 
 }
 
@@ -254,27 +244,15 @@ body{
 
     transform:
 
-        translateY(-6px)
+    translateY(-6px)
 
-        scale(1.04);
-
-    filter:
-
-        brightness(1.15)
-
-        drop-shadow(
-
-            0 0 25px rgba(255,210,100,.55)
-
-        );
+    scale(1.05);
 
 }
 
 .open-button span{
 
     display:block;
-
-    transform:translateY(-2px);
 
 }
 /* ================================================= */
@@ -299,7 +277,7 @@ body{
 
     opacity:0;
 
-    transition:opacity .8s ease;
+    transition:opacity .8s;
 
 }
 
@@ -319,23 +297,26 @@ body{
 
     display:flex;
 
-    width:min(1400px,95vw);
+    width:min(1450px,95vw);
 
-    height:820px;
+    height:850px;
+
+    background:var(--paper);
 
     border-radius:18px;
 
     overflow:hidden;
 
-    background:var(--paper);
+    perspective:3500px;
 
     box-shadow:
 
         0 55px 120px rgba(0,0,0,.55),
 
-        0 15px 35px rgba(0,0,0,.25);
+        0 20px 40px rgba(0,0,0,.25);
 
 }
+
 /* ================================================= */
 /* RELIURE */
 /* ================================================= */
@@ -356,17 +337,17 @@ body{
 
     background:
 
-        linear-gradient(
+    linear-gradient(
 
-            to right,
+        to right,
 
-            rgba(0,0,0,.20),
+        rgba(0,0,0,.20),
 
-            rgba(255,255,255,.18),
+        rgba(255,255,255,.18),
 
-            rgba(0,0,0,.22)
+        rgba(0,0,0,.22)
 
-        );
+    );
 
     box-shadow:
 
@@ -375,6 +356,7 @@ body{
         inset 6px 0 8px rgba(255,255,255,.25);
 
 }
+
 /* ================================================= */
 /* ÉPAISSEUR DES PAGES */
 /* ================================================= */
@@ -395,23 +377,23 @@ body{
 
     border-radius:8px;
 
+    opacity:.75;
+
     background:
 
-        repeating-linear-gradient(
+    repeating-linear-gradient(
 
-            to bottom,
+        to bottom,
 
-            #ece5d7 0px,
+        #ece5d7 0px,
 
-            #ece5d7 2px,
+        #ece5d7 2px,
 
-            #d7cfbf 2px,
+        #d7cfbf 2px,
 
-            #d7cfbf 4px
+        #d7cfbf 4px
 
-        );
-
-    opacity:.75;
+    );
 
 }
 
@@ -431,25 +413,26 @@ body{
 
     border-radius:8px;
 
-    background:
-
-        repeating-linear-gradient(
-
-            to bottom,
-
-            #ece5d7 0px,
-
-            #ece5d7 2px,
-
-            #d7cfbf 2px,
-
-            #d7cfbf 4px
-
-        );
-
     opacity:.75;
 
+    background:
+
+    repeating-linear-gradient(
+
+        to bottom,
+
+        #ece5d7 0px,
+
+        #ece5d7 2px,
+
+        #d7cfbf 2px,
+
+        #d7cfbf 4px
+
+    );
+
 }
+
 /* ================================================= */
 /* PAGES */
 /* ================================================= */
@@ -460,43 +443,49 @@ body{
 
     width:50%;
 
-    padding:70px;
-
     overflow:hidden;
+
+    padding:70px;
 
     background:
 
-        linear-gradient(
+    linear-gradient(
 
-            rgba(255,255,255,.20),
+        rgba(255,255,255,.20),
 
-            rgba(255,255,255,.15)
+        rgba(255,255,255,.15)
 
-        ),
+    ),
 
-        repeating-linear-gradient(
+    repeating-linear-gradient(
 
-            0deg,
+        0deg,
 
-            rgba(0,0,0,.008) 0px,
+        rgba(0,0,0,.008) 0px,
 
-            rgba(0,0,0,.008) 1px,
+        rgba(0,0,0,.008) 1px,
 
-            transparent 1px,
+        transparent 1px,
 
-            transparent 6px
+        transparent 6px
 
-        );
+    );
+
+    transform-style:preserve-3d;
+
+    backface-visibility:hidden;
 
     transition:
 
-        transform .6s ease,
+        transform .8s cubic-bezier(.4,.1,.2,1),
 
-        opacity .6s ease;
+        opacity .5s;
 
 }
 
 .book-left{
+
+    transform-origin:right center;
 
     box-shadow:
 
@@ -508,6 +497,8 @@ body{
 
 .book-right{
 
+    transform-origin:left center;
+
     box-shadow:
 
         inset 28px 0 32px rgba(0,0,0,.08),
@@ -516,79 +507,19 @@ body{
 
 }
 
-.page.page-changing{
-
-    opacity:0;
-
-    transform:scale(.97);
-
-}
 /* ================================================= */
-/* TITRES */
+/* CONTENU DES PAGES */
 /* ================================================= */
 
-.book-title{
+.page-content{
 
-    text-align:center;
+    width:100%;
 
-    margin-top:60px;
+    height:100%;
 
-}
+    display:flex;
 
-.saga{
-
-    font-size:52px;
-
-    font-weight:700;
-
-    color:#842b2b;
-
-}
-
-.subtitle{
-
-    margin-top:12px;
-
-    font-size:24px;
-
-    color:#6b6b6b;
-
-}
-
-.book-title h1{
-
-    margin-top:55px;
-
-    font-size:60px;
-
-    letter-spacing:4px;
-
-    color:#2b2b2b;
-
-}
-
-.book-title h2{
-
-    margin-top:15px;
-
-    font-size:36px;
-
-    font-weight:500;
-
-    color:#4a4a4a;
-
-}
-/* ================================================= */
-/* CHAPITRES */
-/* ================================================= */
-
-.chapter{
-
-    color:var(--text);
-
-    font-size:28px;
-
-    line-height:2;
+    flex-direction:column;
 
 }
 
@@ -596,23 +527,55 @@ body{
 
     text-align:center;
 
-    color:#8b8b8b;
+    font-size:22px;
 
     letter-spacing:2px;
 
-    margin-bottom:12px;
+    color:#8b8b8b;
+
+    margin-bottom:15px;
 
 }
 
-.chapter h3{
+.chapter-title{
 
     text-align:center;
 
-    font-size:46px;
+    font-size:44px;
+
+    color:#222;
 
     margin-bottom:25px;
 
-    color:#222;
+}
+
+.chapter-text{
+
+    flex:1;
+
+    font-size:28px;
+
+    line-height:2;
+
+    text-align:justify;
+
+    color:var(--text);
+
+}
+
+.chapter-text::first-letter{
+
+    float:left;
+
+    font-size:90px;
+
+    line-height:.8;
+
+    padding-right:10px;
+
+    font-weight:bold;
+
+    color:#9b6a2b;
 
 }
 
@@ -628,31 +591,6 @@ body{
 
 }
 
-.chapter p{
-
-    text-align:justify;
-
-}
-
-.chapter p::first-letter{
-
-    float:left;
-
-    font-size:88px;
-
-    line-height:.8;
-
-    padding-right:10px;
-
-    color:#9b6a2b;
-
-    font-weight:bold;
-
-}
-/* ================================================= */
-/* NUMÉROS DE PAGE */
-/* ================================================= */
-
 .page-number{
 
     position:absolute;
@@ -665,48 +603,7 @@ body{
 
     font-size:18px;
 
-    color:#8d8d8d;
-
-    letter-spacing:2px;
-
-}
-/* ================================================= */
-/* ORNEMENTS */
-/* ================================================= */
-
-.page::before{
-
-    content:"❦";
-
-    position:absolute;
-
-    top:25px;
-
-    left:35px;
-
-    font-size:24px;
-
-    color:#d2b06b;
-
-    opacity:.65;
-
-}
-
-.page::after{
-
-    content:"❦";
-
-    position:absolute;
-
-    bottom:25px;
-
-    right:35px;
-
-    font-size:24px;
-
-    color:#d2b06b;
-
-    opacity:.65;
+    color:#888;
 
 }
 /* ================================================= */
@@ -729,18 +626,20 @@ body{
 
 .nav-button{
 
-    width:88px;
+    width:90px;
 
-    height:88px;
-
-    background:none;
+    height:90px;
 
     border:none;
+
+    background:transparent;
 
     cursor:pointer;
 
     transition:
+
         transform .3s ease,
+
         filter .3s ease;
 
 }
@@ -760,11 +659,18 @@ body{
 .nav-button:hover{
 
     transform:
+
         translateY(-8px)
+
         scale(1.08);
 
     filter:
-        drop-shadow(0 0 18px rgba(255,215,120,.65));
+
+        drop-shadow(
+
+            0 0 18px rgba(255,215,120,.65)
+
+        );
 
 }
 
@@ -773,6 +679,7 @@ body{
     transform:scale(.95);
 
 }
+
 /* ================================================= */
 /* SOMMAIRE */
 /* ================================================= */
@@ -799,11 +706,11 @@ body{
 
 .summary-box{
 
-    width:600px;
+    width:650px;
 
     max-width:90%;
 
-    max-height:80vh;
+    max-height:85vh;
 
     overflow-y:auto;
 
@@ -814,7 +721,8 @@ body{
     background:var(--paper);
 
     box-shadow:
-        0 40px 90px rgba(0,0,0,.55);
+
+        0 35px 80px rgba(0,0,0,.55);
 
 }
 
@@ -822,11 +730,9 @@ body{
 
     text-align:center;
 
-    font-size:42px;
+    font-size:46px;
 
     margin-bottom:30px;
-
-    color:#222;
 
 }
 
@@ -842,21 +748,27 @@ body{
 
     border-radius:10px;
 
-    cursor:pointer;
+    background:var(--paper-dark);
 
-    background:#ece3d2;
+    cursor:pointer;
 
     font-size:24px;
 
     font-family:"Cormorant Garamond",serif;
 
-    transition:.25s;
+    transition:
+
+        background .3s,
+
+        transform .3s;
 
 }
 
 .summary-item:hover{
 
-    background:#d9c19a;
+    background:#d8c19b;
+
+    transform:translateX(8px);
 
 }
 
@@ -864,193 +776,192 @@ body{
 
     width:100%;
 
-    margin-top:20px;
-
     padding:18px;
+
+    margin-top:25px;
 
     border:none;
 
     border-radius:10px;
 
-    cursor:pointer;
-
     background:#8b2d2d;
 
     color:white;
 
-    font-size:22px;
+    cursor:pointer;
+
+    font-size:24px;
 
     font-family:"Cormorant Garamond",serif;
-
-    transition:.25s;
 
 }
 
 .summary-close:hover{
 
-    background:#a73737;
+    background:#a83838;
 
 }
+
 /* ================================================= */
 /* PARAMÈTRES */
 /* ================================================= */
 
 .settings-window{
 
+    position:fixed;
+
+    inset:0;
+
     display:none;
 
-}
-/* ================================================= */
-/* ANIMATION DES PAGES */
-/* ================================================= */
+    justify-content:center;
 
-.book{
+    align-items:center;
 
-    perspective:3500px;
+    background:rgba(10,10,20,.75);
 
-}
+    backdrop-filter:blur(8px);
 
-.page{
-
-    transform-style:preserve-3d;
-
-    backface-visibility:hidden;
-
-    transition:
-
-        transform .8s cubic-bezier(.4,.1,.2,1),
-
-        opacity .5s;
+    z-index:1000;
 
 }
 
-.book-left{
+.settings-box{
 
-    transform-origin:right center;
+    width:600px;
 
-}
+    max-width:90%;
 
-.book-right{
+    padding:40px;
 
-    transform-origin:left center;
+    border-radius:18px;
 
-}
+    background:var(--paper);
 
-/* ---------- Tourner vers la gauche ---------- */
+    box-shadow:
 
-.book-left.turn{
-
-    transform:
-
-        rotateY(-18deg);
+        0 35px 80px rgba(0,0,0,.55);
 
 }
 
-/* ---------- Tourner vers la droite ---------- */
+.settings-box h2{
 
-.book-right.turn{
+    text-align:center;
 
-    transform:
+    font-size:44px;
 
-        rotateY(18deg);
-
-}
-/* ================================================= */
-/* RESPONSIVE */
-/* ================================================= */
-
-@media(max-width:1200px){
-
-    .book{
-
-        width:95vw;
-
-        height:760px;
-
-    }
+    margin-bottom:30px;
 
 }
 
-@media(max-width:900px){
+.settings-content{
 
-    .book{
-
-        flex-direction:column;
-
-        height:auto;
-
-    }
-
-    .page{
-
-        width:100%;
-
-    }
-
-    .spine{
-
-        display:none;
-
-    }
-
-    .reader-navigation{
-
-        gap:15px;
-
-    }
-
-    .nav-button{
-
-        width:70px;
-
-        height:70px;
-
-    }
+    min-height:250px;
 
 }
 
-@media(max-width:600px){
+.settings-close{
 
-    .book-cover{
+    width:100%;
 
-        width:280px;
+    padding:18px;
 
-    }
+    margin-top:20px;
 
-    .open-button{
+    border:none;
 
-        width:320px;
+    border-radius:10px;
 
-        height:140px;
+    background:#8b2d2d;
 
-        font-size:24px;
+    color:white;
 
-    }
+    cursor:pointer;
+
+    font-size:24px;
+
+    font-family:"Cormorant Garamond",serif;
+
+}
+
+.settings-close:hover{
+
+    background:#a83838;
 
 }
 /* ================================================= */
 /* ANIMATIONS */
 /* ================================================= */
 
-/* ---------- Flottement de la couverture ---------- */
+.book-left.turn{
+
+    transform:
+        rotateY(-18deg);
+
+}
+
+.book-right.turn{
+
+    transform:
+        rotateY(18deg);
+
+}
+
+.page-changing{
+
+    opacity:.4;
+
+}
+
+.fade-in{
+
+    animation:fadeIn .5s ease;
+
+}
+
+.fade-out{
+
+    animation:fadeOut .5s ease;
+
+}
+
+.zoom-in{
+
+    animation:zoomIn .4s ease;
+
+}
+
+.gold-glow{
+
+    animation:goldGlow 2s infinite;
+
+}
+
+/* ================================================= */
+/* KEYFRAMES */
+/* ================================================= */
 
 @keyframes floatBook{
 
     0%{
+
         transform:translateY(0);
+
     }
 
     50%{
+
         transform:translateY(-12px);
+
     }
 
     100%{
+
         transform:translateY(0);
+
     }
 
 }
-
-/* ---------- Halo magique ---------- */
 
 @keyframes halo{
 
@@ -1073,8 +984,6 @@ body{
 
 }
 
-/* ---------- Apparition du lecteur ---------- */
-
 @keyframes fadeIn{
 
     from{
@@ -1091,8 +1000,6 @@ body{
 
 }
 
-/* ---------- Disparition ---------- */
-
 @keyframes fadeOut{
 
     from{
@@ -1108,8 +1015,6 @@ body{
     }
 
 }
-
-/* ---------- Zoom ---------- */
 
 @keyframes zoomIn{
 
@@ -1131,8 +1036,6 @@ body{
 
 }
 
-/* ---------- Lueur dorée ---------- */
-
 @keyframes goldGlow{
 
     0%,
@@ -1140,7 +1043,9 @@ body{
 
         filter:
 
-            drop-shadow(0 0 8px rgba(255,210,100,.30));
+            drop-shadow(
+                0 0 8px rgba(255,210,100,.30)
+            );
 
     }
 
@@ -1148,38 +1053,129 @@ body{
 
         filter:
 
-            drop-shadow(0 0 22px rgba(255,210,100,.75));
+            drop-shadow(
+                0 0 24px rgba(255,210,100,.75)
+            );
 
     }
 
 }
+
 /* ================================================= */
-/* CLASSES D'ANIMATION */
+/* RESPONSIVE */
 /* ================================================= */
 
-.fade-in{
+@media(max-width:1200px){
 
-    animation:fadeIn .6s ease;
+    .book{
 
-}
+        width:95vw;
 
-.fade-out{
+        height:760px;
 
-    animation:fadeOut .6s ease;
-
-}
-
-.zoom-in{
-
-    animation:zoomIn .5s ease;
+    }
 
 }
 
-.gold-glow{
+@media(max-width:900px){
 
-    animation:goldGlow 2s infinite;
+    body{
+
+        overflow:auto;
+
+    }
+
+    .reader{
+
+        padding:20px;
+
+    }
+
+    .book{
+
+        flex-direction:column;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+    .page{
+
+        width:100%;
+
+        min-height:700px;
+
+    }
+
+    .spine{
+
+        display:none;
+
+    }
+
+    .reader-navigation{
+
+        flex-wrap:wrap;
+
+        gap:15px;
+
+        margin-top:25px;
+
+    }
+
+    .nav-button{
+
+        width:70px;
+
+        height:70px;
+
+    }
 
 }
+
+@media(max-width:600px){
+
+    .book-cover{
+
+        width:260px;
+
+    }
+
+    .open-button{
+
+        width:320px;
+
+        height:140px;
+
+        font-size:24px;
+
+    }
+
+    .chapter-title{
+
+        font-size:34px;
+
+    }
+
+    .chapter-text{
+
+        font-size:22px;
+
+        line-height:1.8;
+
+    }
+
+    .summary-box,
+    .settings-box{
+
+        padding:25px;
+
+    }
+
+}
+
 /* ================================================= */
 /* FIN DU FICHIER */
 /* ================================================= */
