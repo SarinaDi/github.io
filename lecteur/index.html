@@ -47,6 +47,10 @@
 
 <div class="reader" id="reader">
 
+    <!-- ================================================= -->
+    <!-- LIVRE -->
+    <!-- ================================================= -->
+
     <div class="book">
 
         <div class="spine"></div>
@@ -55,9 +59,9 @@
         <!-- PAGE GAUCHE -->
         <!-- ================================================= -->
 
-           <div
-               class="page book-left"
-                id="pageLeft">
+        <div
+            class="page book-left"
+            id="pageLeft">
 
             <div class="book-title">
 
@@ -69,14 +73,19 @@
                     Saga : Le Prince des Enfers
                 </p>
 
-                <h1 id="leftTitle">Tome I</h1>
+                <h1 id="leftTitle">
+                    Tome I
+                </h1>
 
-               <h2 id="leftSubtitle">
-                Le Prince des Enfers
-               </h2>
+                <h2 id="leftSubtitle">
+                    Le Prince des Enfers
+                </h2>
+
             </div>
 
-            <p class="page-number">1</p>
+            <p class="page-number">
+                1
+            </p>
 
         </div>
 
@@ -84,20 +93,24 @@
         <!-- PAGE DROITE -->
         <!-- ================================================= -->
 
-       <div
-    class="page book-right"
-    id="pageRight">
+        <div
+            class="page book-right"
+            id="pageRight">
 
             <div class="chapter">
 
                 <p
-    class="chapter-number"
-    id="chapterNumber">
+                    class="chapter-number"
+                    id="chapterNumber">
+
                     Chapitre I
+
                 </p>
 
                 <h3 id="chapterTitle">
+
                     Une paix fragile
+
                 </h3>
 
                 <div class="separator"></div>
@@ -108,13 +121,13 @@ Le royaume des Enfers n'était jamais réellement silencieux.
 
 Même lorsque les flammes semblaient s'endormir...
 
-</p>
-
-                
+                </p>
 
             </div>
 
-            <p class="page-number">2</p>
+            <p class="page-number">
+                2
+            </p>
 
         </div>
 
@@ -126,45 +139,73 @@ Même lorsque les flammes semblaient s'endormir...
 
     <div class="reader-navigation">
 
-        <button class="nav-button" id="previousPage">
-            <src="../images/previous.png" alt="Précédent">
+        <button
+            class="nav-button"
+            id="previousPage">
+
+            <img
+                src="../images/previous.png"
+                alt="Précédent">
+
         </button>
 
-        <button class="nav-button" id="openSummary">
-            <src="../images/sommaire.png" alt="Sommaire">
+        <button
+            class="nav-button"
+            id="openSummary">
+
+            <img
+                src="../images/sommaire.png"
+                alt="Sommaire">
+
         </button>
 
-        <button class="nav-button" id="goHome">
-            <src="../images/home.png" alt="Accueil">
+        <button
+            class="nav-button"
+            id="goHome">
+
+            <img
+                src="../images/home.png"
+                alt="Accueil">
+
         </button>
 
-        <button class="nav-button" id="openSettings">
-            <src="../images/settings.png" alt="Paramètres">
+        <button
+            class="nav-button"
+            id="openSettings">
+
+            <img
+                src="../images/settings.png"
+                alt="Paramètres">
+
         </button>
 
-        <button class="nav-button" id="nextPage">
-            <src="../images/next.png" alt="Suivant">
+        <button
+            class="nav-button"
+            id="nextPage">
+
+            <img
+                src="../images/next.png"
+                alt="Suivant">
+
         </button>
 
     </div>
 
 </div>
 
-<script src="livre.js"></script>
-<script src="script.js"></script>
-
-</body>
-
-</html>
 <!-- ================================================= -->
 <!-- SOMMAIRE -->
 <!-- ================================================= -->
 
-<div class="summary-window" id="summaryWindow">
+<div
+    class="summary-window"
+    id="summaryWindow">
 
     <div class="summary-box">
 
-        <h2>Sommaire</h2>
+        <h2>
+            Sommaire
+        </h2>
 
         <div id="summaryList"></div>
 
@@ -179,3 +220,24 @@ Même lorsque les flammes semblaient s'endormir...
     </div>
 
 </div>
+
+<!-- ================================================= -->
+<!-- PARAMÈTRES -->
+<!-- ================================================= -->
+
+<div
+    class="settings-window"
+    id="settingsWindow">
+
+</div>
+
+<!-- ================================================= -->
+<!-- SCRIPTS -->
+<!-- ================================================= -->
+
+<script src="../livres/tome1.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
