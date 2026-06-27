@@ -387,6 +387,67 @@ body{
 
 }
 /* ================================================= */
+/* NUMÉROS DE PAGE */
+/* ================================================= */
+
+.page-number{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:18px;
+
+    color:#8d8d8d;
+
+    letter-spacing:2px;
+
+}
+
+/* ================================================= */
+/* ORNEMENTS */
+/* ================================================= */
+
+.page::before{
+
+    content:"❦";
+
+    position:absolute;
+
+    top:25px;
+
+    left:35px;
+
+    font-size:24px;
+
+    color:#d2b06b;
+
+    opacity:.65;
+
+}
+
+.page::after{
+
+    content:"❦";
+
+    position:absolute;
+
+    bottom:25px;
+
+    right:35px;
+
+    font-size:24px;
+
+    color:#d2b06b;
+
+    opacity:.65;
+
+}
+/* ================================================= */
 /* ANIMATIONS */
 /* ================================================= */
 
