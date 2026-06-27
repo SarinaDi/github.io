@@ -1,4 +1,6 @@
-/* ---------- RESET ---------- */
+/* ================================================= */
+/* RESET */
+/* ================================================= */
 
 *{
     margin:0;
@@ -6,376 +8,141 @@
     box-sizing:border-box;
 }
 
-/* ---------- PAGE ---------- */
+html{
+
+    scroll-behavior:smooth;
+
+}
 
 body{
-    margin:0;
+
     font-family:"Cormorant Garamond",serif;
 
+}
+
+/* ================================================= */
+/* PAGE */
+/* ================================================= */
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
     background:
-        linear-gradient(rgba(18,14,35,.55),rgba(18,14,35,.70)),
+        linear-gradient(
+            rgba(15,12,32,.55),
+            rgba(15,12,32,.70)
+        ),
         url("fond-bibliotheque.png");
 
     background-size:cover;
+
     background-position:center;
+
+    background-repeat:no-repeat;
+
     background-attachment:fixed;
 
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    overflow:hidden;
 }
 
-/* ---------- LIVRE ---------- */
+/* ================================================= */
+/* ÉCRAN D'ACCUEIL */
+/* ================================================= */
 
-.reader{
+.home-screen{
+
     width:100%;
+
     min-height:100vh;
 
-    display:none;
-    justify-content:center;
-    align-items:center;
-
-    padding:80px 0;
-}
-.cover-screen{
-    min-height:100vh;
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
-    gap:40px;
-}
-.cover-image{
-    width:450px;
-    max-width:90%;
-    transition:.4s;
-    box-shadow:0 35px 80px rgba(0,0,0,.55);
-    cursor:pointer;
-    filter:
-        drop-shadow(0 25px 45px rgba(0,0,0,.55));
-}
-.cover-image:hover{
-    transform:translateY(-10px) scale(1.02);
-    box-shadow:0 60px 120px rgba(0,0,0,.7);
-}
-#openBook{
-    padding:16px 40px;
-    border-radius:50px;
-    border:2px solid #c9a66b;
-    background:none;
-    color:#c9a66b;
-    font-size:22px;
-    cursor:pointer;
-}
 
-.book{
-    position:relative;
-    display:flex;
-
-    width:min(1400px,95vw);
-    min-height:820px;
-
-    background:#f8f3e8;
-
-    border-radius:16px;
-    overflow:hidden;
-
-    box-shadow:
-        0 40px 120px rgba(0,0,0,.55);
-}
-
-/* ---------- TITRES ---------- */
-
-.book-header{
-    text-align:center;
-    margin-bottom:60px;
-
-}
-
-.saga{
-    font-size:48px;
-    font-weight:bold;
-    color:#842b2b;
-
-}
-
-.subtitle{
-    margin-top:10px;
-    font-size:22px;
-    color:#666;
-
-}
-
-.book-header h1{
-    margin-top:45px;
-    font-size:56px;
-    letter-spacing:4px;
-
-}
-
-.book-header h2{
-    margin-top:12px;
-    font-size:34px;
-    font-weight:500;
-
-}
-
-/* ---------- CHAPITRE ---------- */
-
-.chapter{
-    font-size:28px;
-    line-height:2;
-    color:#2d2d2d;
-
-}
-
-.chapter-number{
-    text-align:center;
-    color:#777;
-    margin-bottom:10px;
-
-}
-
-.chapter h3{
-    text-align:center;
-    font-size:44px;
-    margin-bottom:30px;
-
-}
-
-/* ---------- SÉPARATEUR ---------- */
-
-.separator{
-    width:220px;
-    height:2px;
-    background:#c7a86d;
-    margin:0 auto 40px;
-
-}
-
-/* ---------- LETTRINE ---------- */
-
-.chapter p:last-child::first-letter{
-    float:left;
-    font-size:90px;
-    line-height:.8;
-    padding-right:10px;
-    color:#a57228;
-    font-weight:bold;
-
-}
-
-.left-page{
-
-    width:50%;
-
-    padding:70px 60px 70px 70px;
-
-    background:#f8f3e8;
-
-    border-top-left-radius:12px;
-    border-bottom-left-radius:12px;
-
-    box-shadow:
-        inset -30px 0 35px rgba(0,0,0,.08),
-        inset -5px 0 8px rgba(0,0,0,.08);
-
-}
-
-.right-page{
-
-    width:50%;
-
-    padding:70px 70px 70px 60px;
-
-    background:#f8f3e8;
-
-    border-top-right-radius:12px;
-    border-bottom-right-radius:12px;
-
-    box-shadow:
-        inset 30px 0 35px rgba(0,0,0,.08),
-        inset 5px 0 8px rgba(0,0,0,.08);
-
-}
-.spine{
-    position:absolute;
-    left:50%;
-    top:0;
-    transform:translateX(-50%);
-    width:30px;
-    height:100%;
-    background:
-    linear-gradient(
-        to right,
-        rgba(0,0,0,.18),
-        rgba(255,255,255,.18),
-        rgba(0,0,0,.22)
-    );
-
-    box-shadow:
-        inset -6px 0 8px rgba(0,0,0,.15),
-        inset 6px 0 8px rgba(255,255,255,.25);
-}
-.page{
-    width:50%;
-    position:relative;
-    padding:70px;
-    min-height:100%;
-
-    background:
-        linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)),
-        repeating-linear-gradient(
-            0deg,
-            rgba(0,0,0,.008) 0px,
-            rgba(0,0,0,.008) 1px,
-            transparent 1px,
-            transparent 6px
-        );
-}
-/* ================= COUVERTURE ================= */
-
-.cover-screen{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:40px;
-}
-
-.cover-image{
-    width:380px;
-    max-width:90%;
-    border-radius:12px;
-    box-shadow:0 35px 80px rgba(0,0,0,.55);
-}
-
-#openBook{
-    padding:16px 40px;
-    font-size:22px;
-    font-family:"Cormorant Garamond",serif;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    background:#b58d45;
-    color:white;
-    transition:.3s;
-}
-
-#openBook:hover{
-    transform:translateY(-3px);
-    background:#cda157;
-}
-
-.reader{
-    display:none;
-}
-.home{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
     gap:35px;
+
 }
+/* ================================================= */
+/* COUVERTURE */
+/* ================================================= */
 
-.cover{
+.book-cover{
 
-    width:370px;
+    width:420px;
+
+    max-width:90%;
 
     cursor:pointer;
 
     animation:floatBook 5s ease-in-out infinite;
 
     transition:
-        transform .35s,
-        filter .35s;
+        transform .35s ease,
+        filter .35s ease;
 
     filter:
-        drop-shadow(0 30px 45px rgba(0,0,0,.55));
+        drop-shadow(0 30px 45px rgba(0,0,0,.55))
+        drop-shadow(0 0 20px rgba(255,180,70,.15));
 
 }
 
-.cover:hover{
+.book-cover:hover{
 
     transform:
         translateY(-10px)
         scale(1.04);
 
     filter:
-        drop-shadow(0 40px 70px rgba(255,210,120,.45));
+        drop-shadow(0 40px 70px rgba(0,0,0,.70))
+        drop-shadow(0 0 40px rgba(255,200,80,.35));
 
 }
-.open-book{
+/* ================================================= */
+/* BOUTON */
+/* ================================================= */
+
+.open-button{
 
     padding:18px 55px;
 
-    font-size:30px;
+    font-size:28px;
 
     font-family:"Cormorant Garamond",serif;
 
     color:#f3d287;
 
-    background:rgba(25,18,40,.90);
+    background:rgba(24,18,38,.90);
 
     border:2px solid #c79b45;
 
-    border-radius:50px;
+    border-radius:999px;
 
     cursor:pointer;
 
     transition:.3s;
+
 }
 
-.open-book:hover{
+.open-button:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
 
     background:#c79b45;
 
-    color:#24182f;
-
-    transform:scale(1.05);
-
-}
-/* ============================= */
-/* Animation du livre */
-/* ============================= */
-
-@keyframes floatBook{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-15px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-/* ============================= */
-/* Ouverture */
-/* ============================= */
-
-.cover-image.open{
-
-    animation:none;
-
-    transform:
-        perspective(1800px)
-        rotateY(-25deg)
-        translateX(-60px)
-        scale(1.18);
-
-    filter:
-        brightness(1.2)
-        drop-shadow(0 60px 100px rgba(255,210,120,.65));
-
-    transition:1s ease;
+    color:#22192f;
 
 }
