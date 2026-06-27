@@ -209,27 +209,11 @@ body{
 
 .book{
 
-    position:relative;
+    width:500px !important;
 
-    display:flex;
+    height:300px !important;
 
-    width:94vw;
-
-    max-width:1780px;
-
-    aspect-ratio:2.10/1;
-
-    background:var(--paper);
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:
-
-        0 35px 70px rgba(0,0,0,.40),
-
-        0 15px 30px rgba(0,0,0,.22);
+    background:red !important;
 
 }
 
