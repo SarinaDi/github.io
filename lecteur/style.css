@@ -322,9 +322,7 @@ body{
 /* PAGE DE COUVERTURE */
 /* ================================================= */
 
-.cover-page .page-content{
-
-    padding:40px;
+.cover-page{
 
     display:flex;
 
@@ -334,11 +332,27 @@ body{
 
 }
 
+.cover-page .page-content{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:55px;
+
+}
+
 .cover-page .page-image{
 
-    width:85%;
+    width:auto;
 
-    height:85%;
+    height:90%;
+
+    max-width:88%;
+
+    max-height:90%;
 
     object-fit:contain;
 
