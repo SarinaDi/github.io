@@ -2,25 +2,40 @@
 // TOME I
 // LE PRINCE DES ENFERS
 // =================================================
-const book = [
 
-{
+const pages = [
 
-left:{
+    // =================================================
+    // PAGE 1
+    // =================================================
 
-title:"Tome I",
+    {
 
-subtitle:"Le Prince des Enfers"
+        chapter:"Chapitre I",
 
-},
+        title:"Tome I",
 
-right:{
+        text:`
 
-chapter:"Chapitre I",
+Le Prince des Enfers
 
-title:"Le Prince des Enfers",
+`,
 
-text:`
+        image:""
+
+    },
+
+    // =================================================
+    // PAGE 2
+    // =================================================
+
+    {
+
+        chapter:"Chapitre I",
+
+        title:"Le Prince des Enfers",
+
+        text:`
 
 Le ciel des Enfers ne connaissait ni l'aube ni le crépuscule.
 
@@ -323,44 +338,37 @@ Une héritière.
 Et que leur rencontre allait changer le destin des royaumes à jamais.
 
 Fin du Chapitre 1
-`
 
-}
+`,
 
-},
+        image:""
 
-{
+    },
 
-left:{
+    // =================================================
+    // PAGE 3
+    // =================================================
 
-chapter:"Chapitre II",
+    {
 
-title:"...",
+        chapter:"",
 
-text:`
+        title:"",
 
-......
+        text:`
 
-`
+Les habitants des autres royaumes imaginaient cet endroit comme un monde de souffrance.
 
-},
+Ils se trompaient.
 
-right:{
+Les Enfers étaient vivants.
 
-chapter:"Chapitre III",
+Des marchés animaient les cités...
 
-title:"...",
+`,
 
-text:`
+        image:""
 
-.....
-
-`
-
-}
-
-}
+    }
 
 ];
-
-
