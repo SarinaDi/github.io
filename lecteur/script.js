@@ -47,10 +47,11 @@ previousButton.addEventListener("click", () => {
 
     if(currentPage > 0){
 
-        currentPage--;
+        loadPage(currentPage - 1);
 
-        loadPage(currentPage);
+    }
 
+});
     }
 
 });
@@ -59,9 +60,11 @@ nextButton.addEventListener("click", () => {
 
     if(currentPage < pages.length - 1){
 
-        currentPage++;
+        loadPage(currentPage + 1);
 
-        loadPage(currentPage);
+    }
+
+});
 
     }
 
@@ -88,3 +91,33 @@ function loadPage(index){
 
 }
 loadPage(currentPage);
+// =================================================
+// GESTION DES PAGES
+// =================================================
+
+let currentPage = 0;
+
+function loadPage(index){
+
+    if(index < 0 || index >= pages.length){
+        return;
+    }
+
+    currentPage = index;
+
+    const page = pages[currentPage];
+
+    leftTitle.textContent = page.leftTitle;
+    leftSubtitle.textContent = page.leftSubtitle;
+
+    chapterNumber.textContent = page.rightChapter;
+    chapterTitle.textContent = page.rightTitle;
+    chapterText.textContent = page.rightText;
+
+}
+
+// =================================================
+// DÉMARRAGE
+// =================================================
+
+loadPage(0);
