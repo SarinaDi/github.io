@@ -93,8 +93,8 @@ function loadSpread(index){
 
     const spread = book[currentSpread];
 
-    pageLeft.classList.add("page-changing");
-    pageRight.classList.add("page-changing");
+    pageLeft.classList.add("turn");
+    pageRight.classList.add("turn");
 
     setTimeout(()=>{
 
@@ -126,8 +126,8 @@ function loadSpread(index){
 
         rightPageNumber.textContent = currentSpread * 2 + 2;
 
-        pageLeft.classList.remove("page-changing");
-        pageRight.classList.remove("page-changing");
+        pageLeft.classList.remove("turn");
+        pageRight.classList.remove("turn");
 
     },300);
 
