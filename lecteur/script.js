@@ -1,26 +1,55 @@
+// =================================================
+// VARIABLES
+// =================================================
+
+let currentPage = 0;
+
+
+// =================================================
+// ÉLÉMENTS HTML
+// =================================================
+
+// Accueil
+
 const openButton = document.getElementById("openBook");
 const homeScreen = document.querySelector(".home-screen");
 const reader = document.getElementById("reader");
 const book = document.getElementById("book");
-const chapterNumber = document.getElementById("chapterNumber");
-const chapterTitle = document.getElementById("chapterTitle");
-const chapterText = document.getElementById("chapterText");
-const leftTitle = document.getElementById("leftTitle");
-const leftSubtitle = document.getElementById("leftSubtitle");
+
+// Pages
+
 const leftPage = document.getElementById("pageLeft");
 const rightPage = document.getElementById("pageRight");
 
-// =================================================
-// DONNÉES DU LIVRE
-// =================================================
+// Contenu
 
+const leftTitle = document.getElementById("leftTitle");
+const leftSubtitle = document.getElementById("leftSubtitle");
+
+const chapterNumber = document.getElementById("chapterNumber");
+const chapterTitle = document.getElementById("chapterTitle");
+const chapterText = document.getElementById("chapterText");
+
+// Navigation
+
+const previousButton = document.getElementById("previousPage");
+const nextButton = document.getElementById("nextPage");
+
+// Sommaire
+
+const summaryWindow = document.getElementById("summaryWindow");
+const openSummary = document.getElementById("openSummary");
+const closeSummary = document.getElementById("closeSummary");
+
+
+// =================================================
+// OUVERTURE DU LIVRE
+// =================================================
 
 openButton.addEventListener("click", () => {
 
-    // Animation du livre
     book.classList.add("opening");
 
-    // Attendre la fin de l'animation
     setTimeout(() => {
 
         homeScreen.classList.add("hide");
@@ -38,44 +67,11 @@ openButton.addEventListener("click", () => {
     }, 1200);
 
 });
+
+
 // =================================================
-// NAVIGATION
+// GESTION DES PAGES
 // =================================================
-
-const previousButton = document.getElementById("previousPage");
-const nextButton = document.getElementById("nextPage");
-
-previousButton.addEventListener("click", () => {
-
-    if(currentPage > 0){
-
-        loadPage(currentPage - 1);
-
-    }
-
-});
-    }
-
-});
-
-nextButton.addEventListener("click", () => {
-
-    if(currentPage < pages.length - 1){
-
-        loadPage(currentPage + 1);
-
-    }
-
-});
-
-    }
-
-});
-// =================================================
-// CHARGER UNE PAGE
-// =================================================
-
-let currentPage = 0;
 
 function loadPage(index){
 
@@ -92,8 +88,12 @@ function loadPage(index){
 
         const page = pages[currentPage];
 
+        // Page gauche
+
         leftTitle.textContent = page.leftTitle;
         leftSubtitle.textContent = page.leftSubtitle;
+
+        // Page droite
 
         chapterNumber.textContent = page.rightChapter;
         chapterTitle.textContent = page.rightTitle;
@@ -105,31 +105,78 @@ function loadPage(index){
     },300);
 
 }
-loadPage(currentPage);
+
+
 // =================================================
-// GESTION DES PAGES
+// NAVIGATION
 // =================================================
 
-let currentPage = 0;
+previousButton.addEventListener("click", () => {
 
-function loadPage(index){
+    if(currentPage > 0){
 
-    if(index < 0 || index >= pages.length){
-        return;
+        loadPage(currentPage - 1);
+
     }
 
-    currentPage = index;
+});
 
-    const page = pages[currentPage];
+nextButton.addEventListener("click", () => {
 
-    leftTitle.textContent = page.leftTitle;
-    leftSubtitle.textContent = page.leftSubtitle;
+    if(currentPage < pages.length - 1){
 
-    chapterNumber.textContent = page.rightChapter;
-    chapterTitle.textContent = page.rightTitle;
-    chapterText.textContent = page.rightText;
+        loadPage(currentPage + 1);
+
+    }
+
+});
+
+
+// =================================================
+// SOMMAIRE
+// =================================================
+
+if(openSummary && summaryWindow){
+
+    openSummary.addEventListener("click", () => {
+
+        summaryWindow.style.display = "flex";
+
+    });
 
 }
+
+if(closeSummary && summaryWindow){
+
+    closeSummary.addEventListener("click", () => {
+
+        summaryWindow.style.display = "none";
+
+    });
+
+}
+
+
+// =================================================
+// PARAMÈTRES
+// =================================================
+
+// À venir
+
+
+// =================================================
+// SAUVEGARDE
+// =================================================
+
+// À venir
+
+
+// =================================================
+// ANIMATIONS
+// =================================================
+
+// À venir
+
 
 // =================================================
 // DÉMARRAGE
