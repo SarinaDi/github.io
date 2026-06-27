@@ -206,16 +206,28 @@ body{
 /* ================================================= */
 /* LIVRE */
 /* ================================================= */
-
 .book{
 
-    width:500px !important;
+    position:relative;
 
-    height:300px !important;
+    display:flex;
 
-    background:red !important;
+    width:min(1750px,94vw);
+
+    height:min(880px,88vh);
+
+    background:var(--paper);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 35px 70px rgba(0,0,0,.40),
+        0 15px 30px rgba(0,0,0,.22);
 
 }
+
 
 /* ================================================= */
 /* RELIURE */
@@ -231,25 +243,19 @@ body{
 
     transform:translateX(-50%);
 
-    width:26px;
+    width:24px;
 
     height:100%;
 
-    z-index:20;
-
-    background:
-
-    linear-gradient(
-
+    background:linear-gradient(
         to right,
-
-        #7d7d7d,
-
-        #f2f2f2,
-
-        #7d7d7d
-
+        #6b6b6b,
+        #fdfdfd 30%,
+        #d8d8d8 55%,
+        #888 100%
     );
+
+    z-index:30;
 
 }
 /* ================================================= */
@@ -262,27 +268,25 @@ body{
 
     width:50%;
 
+    height:100%;
+
     background:var(--paper);
 
     overflow:hidden;
-
-    display:flex;
-
-    flex-direction:column;
 
 }
 
 .book-left{
 
     box-shadow:
-        inset -25px 0 35px rgba(0,0,0,.08);
+        inset -25px 0 28px rgba(0,0,0,.08);
 
 }
 
 .book-right{
 
     box-shadow:
-        inset 25px 0 35px rgba(0,0,0,.08);
+        inset 25px 0 28px rgba(0,0,0,.08);
 
 }
 
@@ -296,11 +300,7 @@ body{
 
     height:100%;
 
-    display:flex;
-
-    flex-direction:column;
-
-    padding:45px;
+    padding:70px 70px;
 
 }
 
@@ -308,19 +308,19 @@ body{
 /* COUVERTURE */
 /* ================================================= */
 
-.cover-page{
-
-    padding:0;
-
-}
-
 .cover-page .page-content{
 
     padding:0;
 
 }
 
-.cover-page .page-image{
+.cover-page{
+
+    padding:0;
+
+}
+
+.cover-page img{
 
     width:100%;
 
