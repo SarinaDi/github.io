@@ -81,7 +81,13 @@ body{
     background-attachment:fixed;
 
 }
+.page-content{
 
+    width:100%;
+
+    height:100%;
+
+}
 /* ================================================= */
 /* ÉCRAN D'ACCUEIL */
 /* ================================================= */
@@ -327,11 +333,15 @@ body{
 
 .page-image{
 
-    width:66%;
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
 
     display:block;
 
-    margin:40px auto;
+    margin:0;
 
 }
 /* ================================================= */
