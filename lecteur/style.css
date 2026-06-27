@@ -9,15 +9,11 @@
 }
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
 body{
-
     font-family:"Cormorant Garamond",serif;
-
 }
 
 /* ================================================= */
@@ -28,27 +24,22 @@ body{
 
     min-height:100vh;
 
-    overflow:hidden;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
+
+    overflow:hidden;
 
     background:
         linear-gradient(
-            rgba(15,12,32,.55),
-            rgba(15,12,32,.70)
+            rgba(18,14,35,.55),
+            rgba(18,14,35,.72)
         ),
         url("fond-bibliotheque.png");
 
     background-size:cover;
-
     background-position:center;
-
     background-repeat:no-repeat;
-
     background-attachment:fixed;
 
 }
@@ -60,28 +51,25 @@ body{
 .home-screen{
 
     width:100%;
-
     min-height:100vh;
 
     display:flex;
-
     flex-direction:column;
 
     justify-content:center;
-
     align-items:center;
 
     gap:35px;
 
 }
+
 /* ================================================= */
 /* COUVERTURE */
 /* ================================================= */
 
 .book-cover{
 
-    width:420px;
-
+    width:430px;
     max-width:90%;
 
     cursor:pointer;
@@ -89,12 +77,12 @@ body{
     animation:floatBook 5s ease-in-out infinite;
 
     transition:
-        transform .35s ease,
-        filter .35s ease;
+        transform .35s,
+        filter .35s;
 
     filter:
         drop-shadow(0 30px 45px rgba(0,0,0,.55))
-        drop-shadow(0 0 20px rgba(255,180,70,.15));
+        drop-shadow(0 0 20px rgba(255,190,70,.18));
 
 }
 
@@ -105,10 +93,25 @@ body{
         scale(1.04);
 
     filter:
-        drop-shadow(0 40px 70px rgba(0,0,0,.70))
-        drop-shadow(0 0 40px rgba(255,200,80,.35));
+        drop-shadow(0 45px 80px rgba(0,0,0,.65))
+        drop-shadow(0 0 45px rgba(255,190,70,.35));
 
 }
+
+.book-cover.open{
+
+    animation:none;
+
+    transform:
+        perspective(1800px)
+        rotateY(-25deg)
+        translateX(-60px)
+        scale(1.18);
+
+    transition:1s ease;
+
+}
+
 /* ================================================= */
 /* BOUTON */
 /* ================================================= */
@@ -117,32 +120,49 @@ body{
 
     padding:18px 55px;
 
-    font-size:28px;
-
-    font-family:"Cormorant Garamond",serif;
-
-    color:#f3d287;
-
-    background:rgba(24,18,38,.90);
-
-    border:2px solid #c79b45;
+    border:none;
 
     border-radius:999px;
 
     cursor:pointer;
 
-    transition:.3s;
+    font-family:"Cormorant Garamond",serif;
+    font-size:28px;
+
+    color:#ffffff;
+
+    background:#b58d45;
+
+    transition:.35s;
 
 }
 
 .open-button:hover{
 
     transform:
-        translateY(-4px)
+        translateY(-3px)
         scale(1.05);
 
-    background:#c79b45;
+    background:#cea35b;
 
-    color:#22192f;
+}
+
+/* ================================================= */
+/* ANIMATIONS */
+/* ================================================= */
+
+@keyframes floatBook{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
 
 }
