@@ -343,23 +343,23 @@ body{
 }
 .cover-page{
 
-    padding:0;
+    padding:0 !important;
 
 }
 
 .cover-page .page-image{
 
-    width:100%;
+    width:calc(100% - 16px);
 
-    height:100%;
+    height:calc(100% - 16px);
+
+    margin:2px;
+
+    display:block;
 
     object-fit:contain;
 
     object-position:center;
-
-    padding:6px;
-
-    display:block;
 
 }
 
