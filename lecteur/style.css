@@ -89,12 +89,14 @@ body{
 .book-cover:hover{
 
     transform:
-        translateY(-10px)
-        scale(1.04);
+        translateY(-15px)
+        scale(1.05);
 
     filter:
-        drop-shadow(0 45px 80px rgba(0,0,0,.65))
-        drop-shadow(0 0 45px rgba(255,190,70,.35));
+
+        drop-shadow(0 45px 90px rgba(0,0,0,.70))
+
+        drop-shadow(0 0 60px rgba(255,185,70,.55));
 
 }
 
@@ -134,6 +136,9 @@ body{
     background:#b58d45;
 
     transition:.35s;
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.35);
 
 }
 
@@ -144,6 +149,9 @@ body{
         scale(1.05);
 
     background:#cea35b;
+    box-shadow:
+
+    0 18px 45px rgba(255,185,70,.40);
 
 }
 /* ================================================= */
@@ -527,3 +535,65 @@ body{
     }
 
 }
+/* ================================================= */
+/* EFFETS MAGIQUES */
+/* ================================================= */
+
+.home-screen{
+
+    position:relative;
+
+}
+
+.home-screen::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(255,185,70,.18),
+
+        rgba(255,185,70,.08),
+
+        transparent 70%
+
+    );
+
+    filter:blur(40px);
+
+    animation:halo 6s ease-in-out infinite;
+
+    z-index:-1;
+
+}
+@keyframes halo{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:.8;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:1;
+
+    }
+
+}
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
