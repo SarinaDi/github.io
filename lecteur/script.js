@@ -301,21 +301,6 @@ if(leftIndex + 1 < pages.length){
 
 }
 
-    leftPageNumber.textContent = currentPage + 1;
-
-    if(currentPage + 1 < pages.length){
-
-        rightPageNumber.textContent = currentPage + 2;
-
-    }else{
-
-        rightPageNumber.textContent = "";
-
-    }
-
-}
-
-
 // =================================================
 // NAVIGATION
 // =================================================
@@ -436,7 +421,7 @@ settingsWindow.addEventListener("click",(event)=>{
 // =================================================
 // DÉMARRAGE
 // =================================================
-
+console.log(pages);
 buildSummary();
 
 loadSavedPage();
