@@ -32,16 +32,23 @@ const summaryList = document.getElementById("summaryList");
 const pageLeft = document.getElementById("pageLeft");
 const pageRight = document.getElementById("pageRight");
 
-// Contenu gauche
+// ---------- Page gauche ----------
 
+const leftChapter = document.getElementById("leftChapter");
 const leftTitle = document.getElementById("leftTitle");
-const leftSubtitle = document.getElementById("leftSubtitle");
+const leftText = document.getElementById("leftText");
 
-// Contenu droite
+// ---------- Page droite ----------
 
-const chapterNumber = document.getElementById("chapterNumber");
-const chapterTitle = document.getElementById("chapterTitle");
-const chapterText = document.getElementById("chapterText");
+const rightChapter = document.getElementById("rightChapter");
+const rightTitle = document.getElementById("rightTitle");
+const rightText = document.getElementById("rightText");
+
+// ---------- Numéros ----------
+
+const leftPageNumber = document.getElementById("leftPageNumber");
+const rightPageNumber = document.getElementById("rightPageNumber");
+
 
 // =================================================
 // OUVERTURE DU LIVRE
@@ -71,7 +78,7 @@ openButton.addEventListener("click",()=>{
 
 
 // =================================================
-// GESTION DES PAGES
+// CHARGEMENT D'UNE DOUBLE PAGE
 // =================================================
 
 function loadSpread(index){
@@ -91,27 +98,33 @@ function loadSpread(index){
 
     setTimeout(()=>{
 
-        // -------- PAGE GAUCHE --------
+        // ===========================
+        // PAGE GAUCHE
+        // ===========================
 
-        if(spread.left.title){
+        leftChapter.textContent = spread.left.chapter || "";
 
-            leftTitle.textContent = spread.left.title;
+        leftTitle.textContent = spread.left.title || "";
 
-        }
+        leftText.textContent = spread.left.text || "";
 
-        if(spread.left.subtitle){
+        // ===========================
+        // PAGE DROITE
+        // ===========================
 
-            leftSubtitle.textContent = spread.left.subtitle;
+        rightChapter.textContent = spread.right.chapter || "";
 
-        }
+        rightTitle.textContent = spread.right.title || "";
 
-        // -------- PAGE DROITE --------
+        rightText.textContent = spread.right.text || "";
 
-        chapterNumber.textContent = spread.right.chapter;
+        // ===========================
+        // NUMÉROS DE PAGE
+        // ===========================
 
-        chapterTitle.textContent = spread.right.title;
+        leftPageNumber.textContent = currentSpread * 2 + 1;
 
-        chapterText.textContent = spread.right.text;
+        rightPageNumber.textContent = currentSpread * 2 + 2;
 
         pageLeft.classList.remove("page-changing");
         pageRight.classList.remove("page-changing");
