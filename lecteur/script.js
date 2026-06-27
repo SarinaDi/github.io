@@ -233,7 +233,13 @@ function displayPage(page, side){
 
         title.textContent=page.title || "";
 
-        text.innerHTML=page.text || "";
+        const paragraphs = (page.text || "")
+    .trim()
+    .split(/\n\s*\n/);
+
+text.innerHTML = paragraphs
+    .map(p => `<p>${p.trim()}</p>`)
+    .join("");
 
     }
 
