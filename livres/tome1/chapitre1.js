@@ -312,6 +312,6 @@ Fin du Chapitre 1
 
 `
 
-    }
+    
 
-];
+};
