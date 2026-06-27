@@ -1,12 +1,15 @@
-const chapitre1 = {
+const chapitre2 = {
 
     type: "chapter",
 
-    chapter: "Chapitre I",
+    chapter: "Chapitre II",
 
-    title: "Le Prince des Enfers",
+    title: "...",
 
     text: `
 
     `
+
+    
+
 };
