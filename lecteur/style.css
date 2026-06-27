@@ -661,6 +661,41 @@ body{
 
 }
 /* ================================================= */
+/* ORNEMENTS DES CHAPITRES */
+/* ================================================= */
+
+.chapter-top-decoration{
+
+    width:220px;
+
+    height:24px;
+
+    margin:12px auto 28px;
+
+    background:url("../images/chapter-top.png")
+    center center
+    no-repeat;
+
+    background-size:contain;
+
+}
+
+.chapter-middle-decoration{
+
+    width:260px;
+
+    height:24px;
+
+    margin:28px auto 40px;
+
+    background:url("../images/chapter-middle.png")
+    center center
+    no-repeat;
+
+    background-size:contain;
+
+}
+/* ================================================= */
 /* BARRE DE NAVIGATION */
 /* ================================================= */
 
