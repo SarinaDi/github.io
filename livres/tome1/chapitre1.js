@@ -1,30 +1,12 @@
-const pages = [
+const chapitre1 = {
 
-    // =================================================
-    // PAGE 1
-    // =================================================
+    type: "chapter",
 
-    {
+    chapter: "Chapitre I",
 
-        type:"cover",
+    title: "Le Prince des Enfers",
 
-        image:"../images/tome1leprincedesenfers.png"
-
-    },
-
-    // =================================================
-    // PAGE 2
-    // =================================================
-
-    {
-
-        type:"chapter",
-
-        chapter:"Chapitre I",
-
-        title:"Le Prince des Enfers",
-
-        text:`
+    text: `
 
 Le ciel des Enfers ne connaissait ni l'aube ni le crépuscule.
 
