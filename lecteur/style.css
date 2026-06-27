@@ -319,50 +319,36 @@ body{
 
 }
 /* ================================================= */
-/* IMAGES DES PAGES */
+/* PAGE DE COUVERTURE */
 /* ================================================= */
-
-.page-image{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-}
 
 .cover-page .page-content{
 
-    padding:0;
+    padding:40px;
 
-}
-.cover-page{
+    display:flex;
 
-    padding:0 !important;
+    justify-content:center;
+
+    align-items:center;
 
 }
 
 .cover-page .page-image{
 
-    display:block;
+    width:85%;
 
-    width:auto;
-
-    height:100%;
-
-    max-width:100%;
+    height:85%;
 
     object-fit:contain;
 
     object-position:center;
 
+    display:block;
+
     margin:auto;
 
 }
-
 /* ================================================= */
 /* RELIURE */
 /* ================================================= */
