@@ -283,19 +283,32 @@ body{
 }
 
 .cover{
-    width:360px;
-    transition:.35s;
+
+    width:370px;
+
     cursor:pointer;
 
-    filter:drop-shadow(0 25px 40px rgba(0,0,0,.55));
+    animation:floatBook 5s ease-in-out infinite;
+
+    transition:
+        transform .35s,
+        filter .35s;
+
+    filter:
+        drop-shadow(0 30px 45px rgba(0,0,0,.55));
+
 }
 
 .cover:hover{
+
     transform:
         translateY(-10px)
-        scale(1.03);
-}
+        scale(1.04);
 
+    filter:
+        drop-shadow(0 40px 70px rgba(255,210,120,.45));
+
+}
 .open-book{
 
     padding:18px 55px;
@@ -324,5 +337,24 @@ body{
     color:#24182f;
 
     transform:scale(1.05);
+
+}
+/* ============================= */
+/* Animation du livre */
+/* ============================= */
+
+@keyframes floatBook{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
 
 }
