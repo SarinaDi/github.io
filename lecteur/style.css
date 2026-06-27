@@ -89,6 +89,7 @@ body{
 .home-screen{
 
     position:relative;
+    z-index:1;
 
     width:100%;
 
@@ -117,6 +118,7 @@ body{
 .home-screen::before{
 
     content:"";
+    pointer-events:none;
 
     position:absolute;
 
@@ -205,6 +207,9 @@ body{
 /* ================================================= */
 
 .open-button{
+    position:relative;
+
+    z-index:10;
 
     width:460px;
 
