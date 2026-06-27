@@ -181,7 +181,10 @@ body{
     background:#f8f3e8;
 
     box-shadow:
-        0 45px 100px rgba(0,0,0,.60);
+
+    0 55px 120px rgba(0,0,0,.55),
+
+    0 15px 35px rgba(0,0,0,.25);
 
 }
 
@@ -209,6 +212,7 @@ body{
             transparent 1px,
             transparent 6px
         );
+     overflow:hidden;
 
 }
 
@@ -257,6 +261,63 @@ body{
     box-shadow:
         inset -6px 0 8px rgba(0,0,0,.18),
         inset 6px 0 8px rgba(255,255,255,.25);
+
+}
+/* ================================================= */
+/* ÉPAISSEUR DES PAGES */
+/* ================================================= */
+
+.book::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:18px;
+    bottom:18px;
+    left:12px;
+
+    width:12px;
+
+    border-radius:8px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #ece5d7 0px,
+            #ece5d7 2px,
+            #d7cfbf 2px,
+            #d7cfbf 4px
+        );
+
+    opacity:.75;
+
+}
+
+.book::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:18px;
+    bottom:18px;
+    right:12px;
+
+    width:12px;
+
+    border-radius:8px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #ece5d7 0px,
+            #ece5d7 2px,
+            #d7cfbf 2px,
+            #d7cfbf 4px
+        );
+
+    opacity:.75;
 
 }
 /* ================================================= */
