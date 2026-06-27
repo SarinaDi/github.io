@@ -9,10 +9,24 @@
 /* ---------- PAGE ---------- */
 
 body{
-    background:#1a1628;
-    font-family:"Cormorant Garamond",serif;
     margin:0;
-    overflow-x:hidden;
+    font-family:"Cormorant Garamond",serif;
+
+    background:
+        linear-gradient(rgba(18,14,35,.55),rgba(18,14,35,.70)),
+        url("images/fond-bibliotheque.webp");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
 }
 
 /* ---------- LIVRE ---------- */
