@@ -12,51 +12,6 @@ const leftSubtitle = document.getElementById("leftSubtitle");
 // DONNÉES DU LIVRE
 // =================================================
 
-const pages = [
-
-{
-
-leftTitle:"Tome I",
-
-leftSubtitle:"Le Prince des Enfers",
-
-rightChapter:"Chapitre I",
-
-rightTitle:"Une paix fragile",
-
-rightText:`Le royaume des Enfers n'était jamais réellement silencieux...`
-
-},
-
-{
-
-leftTitle:"Tome I",
-
-leftSubtitle:"Le Prince des Enfers",
-
-rightChapter:"Chapitre II",
-
-rightTitle:"Le Prince",
-
-rightText:`Kaël observait les flammes éternelles...`
-
-},
-
-{
-
-leftTitle:"Tome I",
-
-leftSubtitle:"Le Prince des Enfers",
-
-rightChapter:"Chapitre III",
-
-rightTitle:"La Rencontre",
-
-rightText:`Pour la première fois, Kaël aperçut Nayia...`
-
-}
-
-];
 
 openButton.addEventListener("click", () => {
 
