@@ -901,6 +901,61 @@ body{
 
 }
 /* ================================================= */
+/* ANIMATION DES PAGES */
+/* ================================================= */
+
+.book{
+
+    perspective:3500px;
+
+}
+
+.page{
+
+    transform-style:preserve-3d;
+
+    backface-visibility:hidden;
+
+    transition:
+
+        transform .8s cubic-bezier(.4,.1,.2,1),
+
+        opacity .5s;
+
+}
+
+.book-left{
+
+    transform-origin:right center;
+
+}
+
+.book-right{
+
+    transform-origin:left center;
+
+}
+
+/* ---------- Tourner vers la gauche ---------- */
+
+.book-left.turn{
+
+    transform:
+
+        rotateY(-18deg);
+
+}
+
+/* ---------- Tourner vers la droite ---------- */
+
+.book-right.turn{
+
+    transform:
+
+        rotateY(18deg);
+
+}
+/* ================================================= */
 /* RESPONSIVE */
 /* ================================================= */
 
