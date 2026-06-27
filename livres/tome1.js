@@ -1,6 +1,26 @@
-# TOME I — LE PRINCE DES ENFERS
+// =================================================
+// TOME I
+// LE PRINCE DES ENFERS
+// =================================================
+const book = [
 
-## Chapitre 1 — Le Prince des Enfers
+{
+
+left:{
+
+title:"Tome I",
+
+subtitle:"Le Prince des Enfers"
+
+},
+
+right:{
+
+chapter:"Chapitre I",
+
+title:"Le Prince des Enfers",
+
+text:`
 
 Le ciel des Enfers ne connaissait ni l'aube ni le crépuscule.
 
@@ -170,8 +190,6 @@ Son père savait quelque chose.
 
 Quelque chose qu'il refusait encore de révéler.
 
----
-
 Une heure plus tard, le prince entra dans la salle du conseil.
 
 Une immense pièce circulaire aux colonnes d'obsidienne.
@@ -252,8 +270,6 @@ Pour la première fois depuis longtemps...
 
 Le doute venait d'entrer dans la salle du conseil.
 
----
-
 Lorsque la réunion prit fin, Kaël retourna seul aux écuries royales.
 
 Il posa une main sur l'encolure de son cheval noir.
@@ -306,5 +322,45 @@ Une héritière.
 
 Et que leur rencontre allait changer le destin des royaumes à jamais.
 
-**Fin du Chapitre 1**
+Fin du Chapitre 1
+`
+
+}
+
+},
+
+{
+
+left:{
+
+chapter:"Chapitre II",
+
+title:"...",
+
+text:`
+
+......
+
+`
+
+},
+
+right:{
+
+chapter:"Chapitre III",
+
+title:"...",
+
+text:`
+
+.....
+
+`
+
+}
+
+}
+
+];
+
 
