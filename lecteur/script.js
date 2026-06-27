@@ -26,3 +26,21 @@ openButton.addEventListener("click", () => {
     }, 1200);
 
 });
+// =================================================
+// NAVIGATION
+// =================================================
+
+const previousButton = document.getElementById("previousPage");
+const nextButton = document.getElementById("nextPage");
+
+previousButton.addEventListener("click", () => {
+
+    console.log("Page précédente");
+
+});
+
+nextButton.addEventListener("click", () => {
+
+    console.log("Page suivante");
+
+});
