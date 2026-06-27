@@ -3,17 +3,44 @@
 
 <head>
 
+    <!-- ================================================= -->
+    <!-- MÉTADONNÉES -->
+    <!-- ================================================= -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lecteur - Les Histoires de Ninayia</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>
+        Les Histoires de Ninayia
+    </title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- ================================================= -->
+    <!-- POLICES -->
+    <!-- ================================================= -->
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ================================================= -->
+    <!-- CSS -->
+    <!-- ================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
 
 </head>
 
@@ -23,19 +50,39 @@
 <!-- ÉCRAN D'ACCUEIL -->
 <!-- ================================================= -->
 
-<div class="home-screen">
+<div
+    class="home-screen"
+    id="homeScreen">
+
+    <!-- ================================ -->
+    <!-- Couverture -->
+    <!-- ================================ -->
 
     <img
-        src="../images/cover-kael-nayia-tome1.png"
-        alt="Kaël & Nayia - Tome I"
+
+        id="book"
+
         class="book-cover"
-        id="book">
+
+        src="../images/cover-kael-nayia-tome1.png"
+
+        alt="Kaël & Nayia">
+
+    <!-- ================================ -->
+    <!-- Bouton -->
+    <!-- ================================ -->
 
     <button
-        class="open-button"
-        id="openBook">
 
-        <span>Ouvrir le livre</span>
+        id="openBook"
+
+        class="open-button">
+
+        <span>
+
+            Ouvrir le livre
+
+        </span>
 
     </button>
 
@@ -45,88 +92,112 @@
 <!-- LECTEUR -->
 <!-- ================================================= -->
 
-<div class="reader" id="reader">
+<div
+
+    class="reader"
+
+    id="reader">
 
     <!-- ================================================= -->
     <!-- LIVRE -->
     <!-- ================================================= -->
 
-    <div class="book">
+    <div
+
+        class="book"
+
+        id="bookContainer">
+
+        <!-- ============================================= -->
+        <!-- RELIURE -->
+        <!-- ============================================= -->
 
         <div class="spine"></div>
-
-        <!-- ================================================= -->
+         <!-- ================================================= -->
         <!-- PAGE GAUCHE -->
         <!-- ================================================= -->
 
         <div
-    class="page book-left"
-    id="pageLeft">
+            class="page book-left"
+            id="pageLeft">
 
-    <div class="chapter">
+            <div class="page-content">
 
-        <p
-            class="chapter-number"
-            id="leftChapter">
+                <p
+                    class="chapter-number"
+                    id="leftChapter">
 
-        </p>
+                </p>
 
-        <h3 id="leftTitle">
+                <h2
+                    class="chapter-title"
+                    id="leftTitle">
 
-        </h3>
+                </h2>
 
-        <div class="separator"></div>
+                <div class="separator"></div>
 
-        <p id="leftText">
+                <div
+                    class="chapter-text"
+                    id="leftText">
 
-        </p>
+                </div>
 
-    </div>
+            </div>
 
-    <p class="page-number" id="leftPageNumber">
+            <p
+                class="page-number"
+                id="leftPageNumber">
 
-        1
+                1
 
-    </p>
+            </p>
 
-</div>
+        </div>
 
         <!-- ================================================= -->
         <!-- PAGE DROITE -->
         <!-- ================================================= -->
 
-       <div
-    class="page book-right"
-    id="pageRight">
+        <div
+            class="page book-right"
+            id="pageRight">
 
-    <div class="chapter">
+            <div class="page-content">
 
-        <p
-            class="chapter-number"
-            id="rightChapter">
+                <p
+                    class="chapter-number"
+                    id="rightChapter">
 
-        </p>
+                </p>
 
-        <h3 id="rightTitle">
+                <h2
+                    class="chapter-title"
+                    id="rightTitle">
 
-        </h3>
+                </h2>
 
-        <div class="separator"></div>
+                <div class="separator"></div>
 
-        <p id="rightText">
+                <div
+                    class="chapter-text"
+                    id="rightText">
 
-        </p>
+                </div>
 
-    </div>
+            </div>
 
-    <p class="page-number" id="rightPageNumber">
+            <p
+                class="page-number"
+                id="rightPageNumber">
 
-        2
+                2
 
-    </p>
+            </p>
 
-</div>
+        </div>
 
+    </div>     
     <!-- ================================================= -->
     <!-- BARRE DE NAVIGATION -->
     <!-- ================================================= -->
@@ -139,7 +210,7 @@
 
             <img
                 src="../images/previous.png"
-                alt="Précédent">
+                alt="Page précédente">
 
         </button>
 
@@ -179,7 +250,7 @@
 
             <img
                 src="../images/next.png"
-                alt="Suivant">
+                alt="Page suivante">
 
         </button>
 
@@ -201,7 +272,9 @@
             Sommaire
         </h2>
 
-        <div id="summaryList"></div>
+        <div id="summaryList">
+
+        </div>
 
         <button
             class="summary-close"
@@ -223,13 +296,35 @@
     class="settings-window"
     id="settingsWindow">
 
-</div>
+    <div class="settings-box">
 
+        <h2>
+
+            Paramètres
+
+        </h2>
+
+        <div class="settings-content">
+
+        </div>
+
+        <button
+            class="settings-close"
+            id="closeSettings">
+
+            Fermer
+
+        </button>
+
+    </div>
+
+</div>
 <!-- ================================================= -->
 <!-- SCRIPTS -->
 <!-- ================================================= -->
 
 <script src="../livres/tome1.js"></script>
+
 <script src="script.js"></script>
 
 </body>
