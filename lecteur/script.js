@@ -1,19 +1,20 @@
 const book = document.getElementById("book");
 const button = document.getElementById("openBook");
+const reader = document.getElementById("reader");
+const home = document.querySelector(".home-screen");
 
 button.addEventListener("click", () => {
 
-    // Lance l'animation
     book.classList.add("open");
 
-    // Désactive le bouton
     button.disabled = true;
 
-    // Attend la fin de l'animation
     setTimeout(() => {
 
-        window.location.href = "lecture/index.html";
+        home.style.display = "none";
 
-    }, 1200);
+        reader.style.display = "flex";
+
+    },1000);
 
 });
