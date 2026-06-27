@@ -556,18 +556,6 @@ body{
 
 }
 
-.chapter-title{
-
-    text-align:center;
-
-    font-size:34px;
-
-    color:#222;
-
-    margin-bottom:25px;
-
-}
-
 .chapter-text p:first-child::first-letter{
 
     float:left;
@@ -627,6 +615,49 @@ body{
     font-size:18px;
 
     color:#888;
+
+}
+/* ================================================= */
+/* TEXTE */
+/* ================================================= */
+
+.chapter-text{
+
+    width:78%;
+
+    margin:0 auto;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:16px;
+
+    line-height:2.15;
+
+    text-align:justify;
+
+    color:#2d2b28;
+
+}
+.chapter-text p{
+
+    margin:0 0 24px 0;
+
+}
+.chapter-text p:first-child::first-letter{
+
+    float:left;
+
+    font-size:74px;
+
+    line-height:58px;
+
+    margin-right:12px;
+
+    margin-top:10px;
+
+    color:#9b6a2f;
+
+    font-weight:700;
 
 }
 /* ================================================= */
