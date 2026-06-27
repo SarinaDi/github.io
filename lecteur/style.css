@@ -14,7 +14,7 @@ body{
 
     background:
         linear-gradient(rgba(18,14,35,.55),rgba(18,14,35,.70)),
-        url("images/fond-bibliotheque.webp");
+        url("fond-bibliotheque.png");
 
     background-size:cover;
     background-position:center;
