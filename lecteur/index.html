@@ -32,93 +32,116 @@
         id="book">
 
     <button
-    class="open-button"
-    id="openBook">
+        class="open-button"
+        id="openBook">
 
-    <span>Ouvrir le livre</span>
-
-       
+        <span>Ouvrir le livre</span>
 
     </button>
-    
-
-}
 
 </div>
 
 <!-- ================================================= -->
-<!-- LIVRE -->
+<!-- LECTEUR -->
 <!-- ================================================= -->
 
-    <div class="reader" id="reader">
+<div class="reader" id="reader">
 
-        <div class="book">
+    <div class="book">
 
-            <div class="spine"></div>
+        <div class="spine"></div>
 
-<!-- ================================================= -->
-<!-- PAGE GAUCHE -->
-<!-- ================================================= -->
+        <!-- ================================================= -->
+        <!-- PAGE GAUCHE -->
+        <!-- ================================================= -->
 
-            <div class="page book-left">
+        <div class="page book-left">
 
-                <div class="book-title">
+            <div class="book-title">
 
-                    <p class="saga">
-                        Kaël & Nayia
-                    </p>
+                <p class="saga">
+                    Kaël & Nayia
+                </p>
 
-                    <p class="subtitle">
-                        Saga : Le Prince des Enfers
-                    </p>
+                <p class="subtitle">
+                    Saga : Le Prince des Enfers
+                </p>
 
-                    <h1>Tome I</h1>
+                <h1>Tome I</h1>
 
-                    <h2>Le Prince des Enfers</h2>
-
-                </div>
-                
-                <p class="page-number">1</p>
+                <h2>Le Prince des Enfers</h2>
 
             </div>
 
-<!-- ================================================= -->
-<!-- PAGE DROITE -->
-<!-- ================================================= -->
+            <p class="page-number">1</p>
 
-            <div class="page book-right">
+        </div>
 
-                <div class="chapter">
+        <!-- ================================================= -->
+        <!-- PAGE DROITE -->
+        <!-- ================================================= -->
 
-                    <p class="chapter-number">
-                        Chapitre I
-                    </p>
+        <div class="page book-right">
 
-                    <h3>
-                        Une paix fragile
-                    </h3>
+            <div class="chapter">
 
-                    <div class="separator"></div>
+                <p class="chapter-number">
+                    Chapitre I
+                </p>
 
-                    <p>
+                <h3>
+                    Une paix fragile
+                </h3>
+
+                <div class="separator"></div>
+
+                <p>
 
 Le royaume des Enfers n'était jamais réellement silencieux.
 
 Même lorsque les flammes semblaient s'endormir, les anciennes pierres murmuraient encore les souvenirs des âmes qui avaient traversé leurs portes.
 
-                    </p>
-
-                </div>
+                </p>
 
             </div>
 
-        </div>
+            <p class="page-number">2</p>
 
-        <p class="page-number">2</p>
+        </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <!-- ================================================= -->
+    <!-- BARRE DE NAVIGATION -->
+    <!-- ================================================= -->
+
+    <div class="reader-navigation">
+
+        <button class="nav-button" id="previousPage">
+            <img src="previous.png" alt="Précédent">
+        </button>
+
+        <button class="nav-button" id="openSummary">
+            <img src="sommaire.png" alt="Sommaire">
+        </button>
+
+        <button class="nav-button" id="goHome">
+            <img src="home.png" alt="Accueil">
+        </button>
+
+        <button class="nav-button" id="openSettings">
+            <img src="settings.png" alt="Paramètres">
+        </button>
+
+        <button class="nav-button" id="nextPage">
+            <img src="next.png" alt="Suivant">
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 
