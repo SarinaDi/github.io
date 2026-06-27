@@ -623,13 +623,13 @@ body{
 
 .chapter-text{
 
-    width:78%;
+    width:88%;
 
     margin:0 auto;
 
     font-family:"Cormorant Garamond",serif;
 
-    font-size:16px;
+    font-size:19px;
 
     line-height:2.15;
 
@@ -1213,13 +1213,13 @@ body{
 
     }
 
-    .chapter-text{
+    .chapter-title{
 
-        font-size:22px;
+    font-size:52px;
 
-        line-height:1.8;
+    margin-bottom:35px;
 
-    }
+}
 
     .summary-box,
     .settings-box{
