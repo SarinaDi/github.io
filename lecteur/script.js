@@ -2,6 +2,9 @@ const openButton = document.getElementById("openBook");
 const homeScreen = document.querySelector(".home-screen");
 const reader = document.getElementById("reader");
 const book = document.getElementById("book");
+const chapterNumber = document.getElementById("chapterNumber");
+const chapterTitle = document.getElementById("chapterTitle");
+const chapterText = document.getElementById("chapterText");
 
 // =================================================
 // DONNÉES DU LIVRE
