@@ -31,7 +31,6 @@ function loadSavedPage(){
     }
 
 }
-
 // =================================================
 // ÉLÉMENTS HTML
 // =================================================
@@ -96,19 +95,19 @@ const closeSettings = document.getElementById("closeSettings");
 // OUVERTURE DU LIVRE
 // =================================================
 
-openButton.addEventListener("click", () => {
+openButton.addEventListener("click",()=>{
 
     bookCover.classList.add("opening");
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         homeScreen.classList.add("hide");
 
-        setTimeout(() => {
+        setTimeout(()=>{
 
-            homeScreen.style.display = "none";
+            homeScreen.style.display="none";
 
-            reader.style.display = "flex";
+            reader.style.display="flex";
 
             reader.classList.add("show");
 
@@ -117,7 +116,6 @@ openButton.addEventListener("click", () => {
     },1200);
 
 });
-
 
 // =================================================
 // FERMETURE DU LIVRE
@@ -133,158 +131,155 @@ goHome.addEventListener("click",()=>{
 
         homeScreen.style.display="flex";
 
-        setTimeout(()=>{
+        homeScreen.classList.remove("hide");
 
-            homeScreen.classList.remove("hide");
-
-            bookCover.classList.remove("opening");
-
-        },50);
+        bookCover.classList.remove("opening");
 
     },600);
 
 });
-
-
 // =================================================
 // AFFICHAGE D'UNE PAGE
 // =================================================
 
 function displayPage(page, side){
 
-    const image =
-        side === "left"
-        ? leftImage
-        : rightImage;
+    const image = side === "left" ? leftImage : rightImage;
 
-    const chapter =
-        side === "left"
-        ? leftChapter
-        : rightChapter;
+    const chapter = side === "left" ? leftChapter : rightChapter;
 
-    const title =
-        side === "left"
-        ? leftTitle
-        : rightTitle;
+    const title = side === "left" ? leftTitle : rightTitle;
 
-    const text =
-        side === "left"
-        ? leftText
-        : rightText;
+    const text = side === "left" ? leftText : rightText;
 
-    const pageNumber =
-        side === "left"
+    const pageNumber = side === "left"
         ? leftPageNumber
         : rightPageNumber;
 
+    const pageElement = side === "left"
+        ? pageLeft
+        : pageRight;
 
-    // ==============================
+    const separator = pageElement.querySelector(".separator");
+
+
+    // =============================================
     // PAGE VIDE
-    // ==============================
+    // =============================================
 
     if(!page){
 
-        image.style.display="none";
+        image.style.display = "none";
 
-        chapter.style.display="block";
-        title.style.display="block";
-        text.style.display="block";
+        chapter.style.display = "none";
 
-        chapter.textContent="";
-        title.textContent="";
-        text.innerHTML="";
-        pageNumber.textContent="";
+        title.style.display = "none";
+
+        text.style.display = "none";
+
+        if(separator){
+
+            separator.style.display = "none";
+
+        }
+
+        pageNumber.textContent = "";
 
         return;
 
     }
 
 
-    // ==============================
-    // PAGE COUVERTURE
-    // ==============================
+    // =============================================
+    // COUVERTURE
+    // =============================================
 
-   if(page.type==="cover"){
+    if(page.type === "cover"){
 
-    image.src = page.image;
+        pageElement.classList.add("cover-page");
 
-    image.style.display = "block";
-    image.parentElement.classList.add("cover-page");
+        image.src = page.image;
 
-    image.style.width = "90%";
+        image.style.display = "block";
 
-    image.style.height = "90%";
+        chapter.style.display = "none";
 
-    image.style.objectFit = "contain";
+        title.style.display = "none";
 
-    chapter.style.display = "none";
+        text.style.display = "none";
 
-    title.style.display = "none";
+        if(separator){
 
-    text.style.display = "none";
+            separator.style.display = "none";
 
-     const separator =
-    side === "left"
-    ? pageLeft.querySelector(".separator")
-    : pageRight.querySelector(".separator");
+        }
 
-separator.style.display = "none";  
+        pageNumber.style.display = "none";
 
-    pageNumber.style.display = "none";
-
-}
-
-
-    // ==============================
-    // PAGE CHAPITRE
-    // ==============================
-
-    else if(page.type==="chapter"){
-
-        image.style.display="none";
-        image.parentElement.classList.remove("cover-page");
-        pageNumber.style.display="block";
-
-        chapter.style.display="block";
-        title.style.display="block";
-        text.style.display="block";
-
-        const separator =
-    side === "left"
-    ? pageLeft.querySelector(".separator")
-    : pageRight.querySelector(".separator");
-
-separator.style.display = "block";
-
-        chapter.textContent=page.chapter || "";
-
-        title.textContent=page.title || "";
-
-        const paragraphs = (page.text || "")
-    .trim()
-    .split(/\n\s*\n/);
-
-text.innerHTML = paragraphs
-    .map(p => `<p>${p.trim()}</p>`)
-    .join("");
+        return;
 
     }
 
 
-    // ==============================
-    // PAGE TEXTE
-    // ==============================
+    pageElement.classList.remove("cover-page");
 
-    else if(page.type==="text"){
+    image.style.display = "none";
 
-        image.style.display="none";
+    chapter.style.display = "block";
 
-        chapter.style.display="none";
-        title.style.display="none";
+    title.style.display = "block";
 
-        text.style.display="block";
+    text.style.display = "block";
 
-        text.innerHTML=page.text || "";
+    pageNumber.style.display = "block";
+
+    if(separator){
+
+        separator.style.display = "block";
+
+    }
+
+
+    // =============================================
+    // CHAPITRE
+    // =============================================
+
+    if(page.type === "chapter"){
+
+        chapter.textContent = page.chapter || "";
+
+        title.textContent = page.title || "";
+
+        const paragraphs = (page.text || "")
+            .trim()
+            .split(/\n\s*\n/);
+
+        text.innerHTML = paragraphs
+            .map(p => `<p>${p.trim()}</p>`)
+            .join("");
+
+        return;
+
+    }
+
+
+    // =============================================
+    // TEXTE
+    // =============================================
+
+    if(page.type === "text"){
+
+        chapter.style.display = "none";
+
+        title.style.display = "none";
+
+        if(separator){
+
+            separator.style.display = "none";
+
+        }
+
+        text.innerHTML = page.text || "";
 
     }
 
@@ -303,36 +298,50 @@ function loadPages(startPage){
 
     if(startPage >= pages.length){
 
-        return;
+        startPage = pages.length - 1;
 
     }
 
     currentPage = startPage;
+
     savePage();
 
     let leftIndex = currentPage;
 
-if(leftIndex % 2 !== 0){
+    if(leftIndex % 2 !== 0){
 
-    leftIndex--;
+        leftIndex--;
 
-}
+    }
 
-displayPage(pages[leftIndex],"left");
+    displayPage(
 
-displayPage(pages[leftIndex + 1],"right");
+        pages[leftIndex],
 
-leftPageNumber.textContent = leftIndex + 1;
+        "left"
 
-if(leftIndex + 1 < pages.length){
+    );
 
-    rightPageNumber.textContent = leftIndex + 2;
+    displayPage(
 
-}else{
+        pages[leftIndex + 1],
 
-    rightPageNumber.textContent = "";
+        "right"
 
-}
+    );
+
+    leftPageNumber.textContent = leftIndex + 1;
+
+    if(leftIndex + 1 < pages.length){
+
+        rightPageNumber.textContent = leftIndex + 2;
+
+    }else{
+
+        rightPageNumber.textContent = "";
+
+    }
+
 }
 // =================================================
 // NAVIGATION
@@ -340,25 +349,27 @@ if(leftIndex + 1 < pages.length){
 
 previousButton.addEventListener("click",()=>{
 
-    if(currentPage >= 2){
+    if(currentPage <= 0){
 
-        loadPages(currentPage - 2);
+        return;
 
     }
 
-});
+    loadPages(currentPage - 2);
 
+});
 
 nextButton.addEventListener("click",()=>{
 
-    if(currentPage + 2 < pages.length){
+    if(currentPage + 2 >= pages.length){
 
-        loadPages(currentPage + 2);
+        return;
 
     }
 
-});
+    loadPages(currentPage + 2);
 
+});
 // =================================================
 // SOMMAIRE
 // =================================================
@@ -370,14 +381,16 @@ function buildSummary(){
     pages.forEach((page,index)=>{
 
         if(page.type !== "chapter"){
+
             return;
+
         }
 
         const button = document.createElement("button");
 
         button.className = "summary-item";
 
-        button.textContent = page.chapter + " - " + page.title;
+        button.textContent = page.chapter + " — " + page.title;
 
         button.addEventListener("click",()=>{
 
@@ -398,6 +411,8 @@ function buildSummary(){
 
 openSummary.addEventListener("click",()=>{
 
+    buildSummary();
+
     summaryWindow.style.display = "flex";
 
 });
@@ -407,34 +422,30 @@ closeSummary.addEventListener("click",()=>{
     summaryWindow.style.display = "none";
 
 });
-
-
 // =================================================
 // PARAMÈTRES
 // =================================================
 
 openSettings.addEventListener("click",()=>{
 
-    settingsWindow.style.display = "flex";
+    settingsWindow.style.display="flex";
 
 });
 
 closeSettings.addEventListener("click",()=>{
 
-    settingsWindow.style.display = "none";
+    settingsWindow.style.display="none";
 
 });
-
-
 // =================================================
 // FERMETURE DES FENÊTRES
 // =================================================
 
 summaryWindow.addEventListener("click",(event)=>{
 
-    if(event.target === summaryWindow){
+    if(event.target===summaryWindow){
 
-        summaryWindow.style.display = "none";
+        summaryWindow.style.display="none";
 
     }
 
@@ -442,23 +453,19 @@ summaryWindow.addEventListener("click",(event)=>{
 
 settingsWindow.addEventListener("click",(event)=>{
 
-    if(event.target === settingsWindow){
+    if(event.target===settingsWindow){
 
-        settingsWindow.style.display = "none";
+        settingsWindow.style.display="none";
 
     }
 
 });
-
-
 // =================================================
 // DÉMARRAGE
 // =================================================
-console.log(pages);
-buildSummary();
 
 loadSavedPage();
 
+buildSummary();
+
 loadPages(currentPage);
-
-
