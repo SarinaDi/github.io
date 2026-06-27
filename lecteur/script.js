@@ -204,20 +204,27 @@ function displayPage(page, side){
     // PAGE COUVERTURE
     // ==============================
 
-    if(page.type==="cover"){
+   if(page.type==="cover"){
 
-        image.src=page.image;
+    image.src = page.image;
 
-        image.style.display="block";
-        image.style.width = "100%";
-        image.style.height = "100%";
-        image.style.objectFit = "contain";
+    image.style.display = "block";
 
-        chapter.style.display="none";
-        title.style.display="none";
-        text.style.display="none";
+    image.style.width = "90%";
 
-    }
+    image.style.height = "90%";
+
+    image.style.objectFit = "contain";
+
+    chapter.style.display = "none";
+
+    title.style.display = "none";
+
+    text.style.display = "none";
+
+    pageNumber.style.display = "none";
+
+}
 
 
     // ==============================
@@ -227,6 +234,7 @@ function displayPage(page, side){
     else if(page.type==="chapter"){
 
         image.style.display="none";
+        pageNumber.style.display="block";
 
         chapter.style.display="block";
         title.style.display="block";
