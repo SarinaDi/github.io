@@ -55,21 +55,16 @@ body{
 }
 
 .left{
-
-    box-shadow:
-        inset -25px 0 35px rgba(0,0,0,.08);
+    background:#f5f1e6;
 
 }
 
 .right{
-
-    box-shadow:
-        inset 25px 0 35px rgba(0,0,0,.08);
+    background:#f5f1e6;
 
 }
 
 .page-content{
-
     text-align:center;
 
 }
