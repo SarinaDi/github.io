@@ -209,6 +209,9 @@ function displayPage(page, side){
         image.src=page.image;
 
         image.style.display="block";
+        image.style.width = "100%";
+        image.style.height = "100%";
+        image.style.objectFit = "contain";
 
         chapter.style.display="none";
         title.style.display="none";
