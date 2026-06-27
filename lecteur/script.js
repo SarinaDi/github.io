@@ -223,6 +223,13 @@ function displayPage(page, side){
 
     text.style.display = "none";
 
+     const separator =
+    side === "left"
+    ? pageLeft.querySelector(".separator")
+    : pageRight.querySelector(".separator");
+
+separator.style.display = "none";  
+
     pageNumber.style.display = "none";
 
 }
@@ -241,6 +248,13 @@ function displayPage(page, side){
         chapter.style.display="block";
         title.style.display="block";
         text.style.display="block";
+
+        const separator =
+    side === "left"
+    ? pageLeft.querySelector(".separator")
+    : pageRight.querySelector(".separator");
+
+separator.style.display = "block";
 
         chapter.textContent=page.chapter || "";
 
