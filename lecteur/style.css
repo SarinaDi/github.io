@@ -121,7 +121,7 @@ body{
 .open-button{
 
     width:460px;
-    height:150px;
+    height:110px;
 
     background:
         url("button-frame.png")
@@ -167,6 +167,11 @@ body{
         drop-shadow(0 15px 30px rgba(0,0,0,.45));
 
 }
+ .open-button span{
+
+    display:block;
+
+    transform:translateY(-2px);
 /* ================================================= */
 /* LIVRE */
 /* ================================================= */
