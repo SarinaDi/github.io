@@ -347,13 +347,13 @@ body{
     display:block;
 
 }
-.cover-page{
+
+.cover-page .page-content{
 
     padding:0 !important;
 
 }
-
-.cover-page .page-content{
+.cover-page{
 
     padding:0 !important;
 
@@ -362,17 +362,19 @@ body{
 .cover-page .page-image{
 
     width:100%;
+
     height:100%;
 
     object-fit:contain;
 
     object-position:center;
 
-    padding:18px;
+    padding:6px;
 
     display:block;
 
 }
+
 /* ================================================= */
 /* RELIURE */
 /* ================================================= */
