@@ -1,20 +1,28 @@
-const book = document.getElementById("book");
-const button = document.getElementById("openBook");
+const openButton = document.getElementById("openBook");
+const homeScreen = document.querySelector(".home-screen");
 const reader = document.getElementById("reader");
-const home = document.querySelector(".home-screen");
+const book = document.getElementById("book");
 
-button.addEventListener("click", () => {
+openButton.addEventListener("click", () => {
 
-    book.classList.add("open");
+    // Animation du livre
+    book.classList.add("opening");
 
-    button.disabled = true;
-
+    // Attendre la fin de l'animation
     setTimeout(() => {
 
-        home.style.display = "none";
+        homeScreen.classList.add("hide");
 
-        reader.style.display = "flex";
+        setTimeout(() => {
 
-    },1000);
+            homeScreen.style.display = "none";
+
+            reader.style.display = "flex";
+
+            reader.classList.add("show");
+
+        }, 700);
+
+    }, 1200);
 
 });
