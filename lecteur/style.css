@@ -3,16 +3,30 @@
 /* ================================================= */
 
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
-
 }
 
 html{
-
     scroll-behavior:smooth;
+}
+
+:root{
+
+    --background:#120e23;
+
+    --paper:#f8f4ea;
+
+    --paper-dark:#ece3d2;
+
+    --text:#2d2b28;
+
+    --gold:#c79b45;
+
+    --gold-light:#f4d893;
+
+    --shadow:rgba(0,0,0,.45);
 
 }
 
@@ -22,52 +36,19 @@ body{
 
     overflow:hidden;
 
-    font-family:"Cormorant Garamond",serif;
-
-}
-
-/* ================================================= */
-/* VARIABLES */
-/* ================================================= */
-
-:root{
-
-    --background:#120e23;
-
-    --paper:#f8f3e8;
-
-    --paper-dark:#ece3d2;
-
-    --text:#2b2b2b;
-
-    --gold:#c79b45;
-
-    --gold-light:#f3d287;
-
-    --shadow:rgba(0,0,0,.55);
-
-}
-
-/* ================================================= */
-/* PAGE */
-/* ================================================= */
-
-body{
-
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 
+    font-family:"Cormorant Garamond",serif;
+
     background:
 
     linear-gradient(
-
-        rgba(18,14,35,.55),
-
-        rgba(18,14,35,.72)
-
+        rgba(18,14,35,.45),
+        rgba(18,14,35,.70)
     ),
 
     url("../images/fond-bibliotheque.png");
@@ -78,21 +59,17 @@ body{
 
     background-repeat:no-repeat;
 
-    background-attachment:fixed;
-
 }
+
 /* ================================================= */
-/* ÉCRAN D'ACCUEIL */
+/* ACCUEIL */
 /* ================================================= */
 
 .home-screen{
 
-    position:relative;
-    z-index:1;
+    position:absolute;
 
-    width:100%;
-
-    min-height:100vh;
+    inset:0;
 
     display:flex;
 
@@ -102,9 +79,11 @@ body{
 
     align-items:center;
 
-    gap:40px;
+    gap:45px;
 
     transition:opacity .8s;
+
+    z-index:5;
 
 }
 
@@ -112,76 +91,31 @@ body{
 
     opacity:0;
 
-}
-
-.home-screen::before{
-
-    content:"";
     pointer-events:none;
-
-    position:absolute;
-
-    width:700px;
-
-    height:700px;
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(
-
-        circle,
-
-        rgba(255,200,90,.18),
-
-        rgba(255,200,90,.08),
-
-        transparent 70%
-
-    );
-
-    filter:blur(45px);
-
-    animation:halo 6s ease-in-out infinite;
 
 }
 
 /* ================================================= */
-/* COUVERTURE */
+/* COUVERTURE ACCUEIL */
 /* ================================================= */
 
 .book-cover{
 
     width:380px;
 
+    filter:drop-shadow(0 25px 45px rgba(0,0,0,.5));
+
     cursor:pointer;
 
-    transition:
+    animation:floatBook 6s ease-in-out infinite;
 
-    transform 1s,
-
-    filter 1s;
-
-    animation:floatBook 5s ease-in-out infinite;
-
-    filter:
-
-    drop-shadow(
-
-        0 30px 45px rgba(0,0,0,.55)
-
-    );
+    transition:transform .5s;
 
 }
 
 .book-cover:hover{
 
-    transform:
-
-    translateY(-12px)
-
-    scale(1.03);
+    transform:scale(1.03);
 
 }
 
@@ -190,14 +124,10 @@ body{
     animation:none;
 
     transform:
-
-    perspective(1800px)
-
-    rotateY(-35deg)
-
-    translateX(-70px)
-
-    scale(1.18);
+        perspective(1800px)
+        rotateY(-35deg)
+        translateX(-60px)
+        scale(1.15);
 
 }
 
@@ -206,17 +136,12 @@ body{
 /* ================================================= */
 
 .open-button{
-    position:relative;
 
-    z-index:10;
+    width:440px;
 
-    width:460px;
-
-    height:200px;
+    height:170px;
 
     border:none;
-
-    cursor:pointer;
 
     background:
 
@@ -230,35 +155,22 @@ body{
 
     color:var(--gold-light);
 
-    font-size:32px;
+    font-size:30px;
 
     font-family:"Cormorant Garamond",serif;
 
-    font-weight:600;
+    cursor:pointer;
 
-    transition:
-
-    transform .3s,
-
-    filter .3s;
+    transition:transform .3s;
 
 }
 
 .open-button:hover{
 
-    transform:
-
-    translateY(-6px)
-
-    scale(1.05);
+    transform:translateY(-5px);
 
 }
 
-.open-button span{
-
-    display:block;
-
-}
 /* ================================================= */
 /* LECTEUR */
 /* ================================================= */
@@ -273,15 +185,15 @@ body{
 
     flex-direction:column;
 
-    justify-content:flex-start;
+    justify-content:center;
 
     align-items:center;
 
-    padding-top:20px;
-
     opacity:0;
 
-    transition:opacity .8s;
+    transition:opacity .6s;
+
+    padding:15px;
 
 }
 
@@ -290,6 +202,7 @@ body{
     opacity:1;
 
 }
+
 /* ================================================= */
 /* LIVRE */
 /* ================================================= */
@@ -300,67 +213,28 @@ body{
 
     display:flex;
 
-    width:min(1600px,90vw);
+    width:min(1650px,90vw);
 
-    height:min(820px,76vh);
+    aspect-ratio:1.72/1;
 
     background:var(--paper);
 
-    border-radius:24px;
+    border-radius:20px;
 
     overflow:hidden;
 
-    margin-bottom:20px;
-
     box-shadow:
-        0 45px 90px rgba(0,0,0,.45),
-        0 15px 30px rgba(0,0,0,.25);
+
+        0 40px 80px rgba(0,0,0,.45),
+
+        0 15px 35px rgba(0,0,0,.25);
 
 }
+
 /* ================================================= */
-/* PAGE DE COUVERTURE */
+/* RELIURE */
 /* ================================================= */
 
-.cover-page{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.cover-page .page-content{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:0;
-
-}
-
-.cover-page .page-image{
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-    
-.cover-page img{
-
-    width:96%;
-
-    height:96%;
-
-    object-fit:contain;
-
-    object-position:center;
-
-}
 .spine{
 
     position:absolute;
@@ -375,98 +249,23 @@ body{
 
     height:100%;
 
+    z-index:20;
+
     background:
 
     linear-gradient(
+
         to right,
-        #7b7b7b,
-        #efefef,
-        #8b8b8b
-    );
 
-    box-shadow:
-        inset -5px 0 8px rgba(0,0,0,.25),
-        inset 5px 0 8px rgba(255,255,255,.35);
+        #7d7d7d,
 
-    z-index:50;
+        #f2f2f2,
 
-}
-/* ================================================= */
-/* ÉPAISSEUR DES PAGES */
-/* ================================================= */
-
-.book::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:18px;
-
-    bottom:18px;
-
-    left:12px;
-
-    width:12px;
-
-    border-radius:8px;
-
-    opacity:.75;
-
-    background:
-
-    repeating-linear-gradient(
-
-        to bottom,
-
-        #ece5d7 0px,
-
-        #ece5d7 2px,
-
-        #d7cfbf 2px,
-
-        #d7cfbf 4px
+        #7d7d7d
 
     );
 
 }
-
-.book::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:18px;
-
-    bottom:18px;
-
-    right:12px;
-
-    width:12px;
-
-    border-radius:8px;
-
-    opacity:.75;
-
-    background:
-
-    repeating-linear-gradient(
-
-        to bottom,
-
-        #ece5d7 0px,
-
-        #ece5d7 2px,
-
-        #d7cfbf 2px,
-
-        #d7cfbf 4px
-
-    );
-
-}
-
 /* ================================================= */
 /* PAGES */
 /* ================================================= */
@@ -477,28 +276,32 @@ body{
 
     width:50%;
 
-    overflow:hidden;
-
     background:var(--paper);
 
-    transform-style:preserve-3d;
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
 
 }
+
 .book-left{
 
     box-shadow:
-        inset -18px 0 30px rgba(0,0,0,.08);
+        inset -25px 0 35px rgba(0,0,0,.08);
 
 }
 
 .book-right{
 
     box-shadow:
-        inset 18px 0 30px rgba(0,0,0,.08);
+        inset 25px 0 35px rgba(0,0,0,.08);
 
 }
+
 /* ================================================= */
-/* CONTENU DES PAGES */
+/* CONTENU */
 /* ================================================= */
 
 .page-content{
@@ -511,57 +314,87 @@ body{
 
     flex-direction:column;
 
-    padding:clamp(40px,4vw,70px);
+    padding:45px;
 
 }
+
+/* ================================================= */
+/* COUVERTURE */
+/* ================================================= */
+
+.cover-page{
+
+    padding:0;
+
+}
+
+.cover-page .page-content{
+
+    padding:0;
+
+}
+
+.cover-page .page-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    display:block;
+
+}
+
+/* ================================================= */
+/* IMAGE */
+/* ================================================= */
+
+.page-image{
+
+    width:100%;
+
+    height:100%;
+
+    display:none;
+
+}
+
+/* ================================================= */
+/* CHAPITRE */
+/* ================================================= */
 
 .chapter-number{
 
     text-align:center;
 
-    font-size:20px;
-
-    letter-spacing:4px;
-
-    color:#8b8b8b;
-    margin-top:40px;
-    margin-bottom:15px;
     text-transform:uppercase;
 
-}
+    letter-spacing:6px;
 
-.chapter-text p:first-child::first-letter{
+    font-size:20px;
 
-    float:left;
+    color:#8f7a56;
 
-    font-size:26px;
-
-    line-height:2;
-    text-align:justify;
-
-    margin-right:12px;
-
-    margin-top:8px;
-
-    color:#9d6b2b;
-
-    font-weight:700;
+    margin-top:20px;
 
 }
 
-.chapter-text::first-letter{
+.chapter-title{
 
-    float:left;
+    text-align:center;
 
-    font-size:90px;
+    font-size:46px;
 
-    line-height:.8;
+    font-weight:600;
 
-    padding-right:10px;
+    color:#2d2b28;
 
-    font-weight:bold;
+    margin-top:20px;
 
-    color:#9b6a2b;
+    margin-bottom:30px;
 
 }
 
@@ -571,112 +404,88 @@ body{
 
     height:2px;
 
-    margin:0 auto 40px;
+    background:linear-gradient(to right,transparent,var(--gold),transparent);
 
-    background:var(--gold);
-
-}
-
-.page-number{
-
-    position:absolute;
-
-    bottom:25px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:18px;
-
-    color:#888;
+    margin:0 auto 35px;
 
 }
+
 /* ================================================= */
 /* TEXTE */
 /* ================================================= */
 
 .chapter-text{
 
-    width:88%;
+    flex:1;
 
-    margin:0 auto;
+    width:100%;
 
-    font-family:"Cormorant Garamond",serif;
+    font-size:23px;
 
-    font-size:19px;
+    line-height:2;
 
-    line-height:2.15;
+    color:var(--text);
 
     text-align:justify;
 
-    color:#2d2b28;
-
 }
+
 .chapter-text p{
 
-    margin:0 0 24px 0;
+    margin-bottom:22px;
 
 }
+
+/* ================================================= */
+/* LETTRINE */
+/* ================================================= */
+
 .chapter-text p:first-child::first-letter{
 
     float:left;
 
-    font-size:74px;
+    font-size:86px;
 
-    line-height:58px;
+    line-height:.8;
 
     margin-right:12px;
 
     margin-top:10px;
 
-    color:#9b6a2f;
+    color:#a36e2b;
 
-    font-weight:700;
-
-}
-/* ================================================= */
-/* ORNEMENTS DES CHAPITRES */
-/* ================================================= */
-
-.chapter-top-decoration{
-
-    width:220px;
-
-    height:24px;
-
-    margin:12px auto 28px;
-
-    background:url("../images/chapter-top.png")
-    center center
-    no-repeat;
-
-    background-size:contain;
+    font-weight:bold;
 
 }
 
-.chapter-middle-decoration{
+/* ================================================= */
+/* NUMÉROS */
+/* ================================================= */
 
-    width:260px;
+.page-number{
 
-    height:24px;
+    position:absolute;
 
-    margin:28px auto 40px;
+    bottom:20px;
 
-    background:url("../images/chapter-middle.png")
-    center center
-    no-repeat;
+    left:50%;
 
-    background-size:contain;
+    transform:translateX(-50%);
+
+    color:#777;
+
+    font-size:18px;
 
 }
 /* ================================================= */
-/* BARRE DE NAVIGATION */
+/* NAVIGATION */
 /* ================================================= */
 
 .reader-navigation{
 
-    margin-top:15px;
+    width:min(1650px,90vw);
+
+    margin-top:18px;
 
     display:flex;
 
@@ -684,15 +493,15 @@ body{
 
     align-items:center;
 
-    gap:30px;
+    gap:28px;
 
 }
 
 .nav-button{
 
-    width:90px;
+    width:78px;
 
-    height:90px;
+    height:78px;
 
     border:none;
 
@@ -701,10 +510,8 @@ body{
     cursor:pointer;
 
     transition:
-
-        transform .3s ease,
-
-        filter .3s ease;
+        transform .25s,
+        filter .25s;
 
 }
 
@@ -723,18 +530,11 @@ body{
 .nav-button:hover{
 
     transform:
-
-        translateY(-8px)
-
-        scale(1.08);
+        translateY(-4px)
+        scale(1.06);
 
     filter:
-
-        drop-shadow(
-
-            0 0 18px rgba(255,215,120,.65)
-
-        );
+        drop-shadow(0 0 12px rgba(255,210,110,.65));
 
 }
 
@@ -770,23 +570,20 @@ body{
 
 .summary-box{
 
-    width:650px;
-
-    max-width:90%;
+    width:min(700px,92vw);
 
     max-height:85vh;
 
     overflow-y:auto;
 
-    padding:40px;
+    background:var(--paper);
 
     border-radius:18px;
 
-    background:var(--paper);
+    padding:40px;
 
     box-shadow:
-
-        0 35px 80px rgba(0,0,0,.55);
+        0 25px 60px rgba(0,0,0,.45);
 
 }
 
@@ -794,7 +591,7 @@ body{
 
     text-align:center;
 
-    font-size:46px;
+    font-size:42px;
 
     margin-bottom:30px;
 
@@ -804,35 +601,33 @@ body{
 
     width:100%;
 
-    padding:18px;
-
-    margin-bottom:15px;
-
     border:none;
-
-    border-radius:10px;
 
     background:var(--paper-dark);
 
-    cursor:pointer;
+    border-radius:10px;
 
-    font-size:24px;
+    padding:18px;
+
+    margin-bottom:14px;
+
+    cursor:pointer;
 
     font-family:"Cormorant Garamond",serif;
 
+    font-size:24px;
+
     transition:
-
-        background .3s,
-
-        transform .3s;
+        background .25s,
+        transform .25s;
 
 }
 
 .summary-item:hover{
 
-    background:#d8c19b;
+    background:#dbc7a5;
 
-    transform:translateX(8px);
+    transform:translateX(6px);
 
 }
 
@@ -840,9 +635,9 @@ body{
 
     width:100%;
 
-    padding:18px;
+    margin-top:20px;
 
-    margin-top:25px;
+    padding:16px;
 
     border:none;
 
@@ -854,15 +649,7 @@ body{
 
     cursor:pointer;
 
-    font-size:24px;
-
-    font-family:"Cormorant Garamond",serif;
-
-}
-
-.summary-close:hover{
-
-    background:#a83838;
+    font-size:22px;
 
 }
 
@@ -892,19 +679,16 @@ body{
 
 .settings-box{
 
-    width:600px;
-
-    max-width:90%;
-
-    padding:40px;
-
-    border-radius:18px;
+    width:min(650px,92vw);
 
     background:var(--paper);
 
-    box-shadow:
+    border-radius:18px;
 
-        0 35px 80px rgba(0,0,0,.55);
+    padding:40px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
 
 }
 
@@ -912,7 +696,7 @@ body{
 
     text-align:center;
 
-    font-size:44px;
+    font-size:42px;
 
     margin-bottom:30px;
 
@@ -928,9 +712,7 @@ body{
 
     width:100%;
 
-    padding:18px;
-
-    margin-top:20px;
+    padding:16px;
 
     border:none;
 
@@ -942,15 +724,7 @@ body{
 
     cursor:pointer;
 
-    font-size:24px;
-
-    font-family:"Cormorant Garamond",serif;
-
-}
-
-.settings-close:hover{
-
-    background:#a83838;
+    font-size:22px;
 
 }
 /* ================================================= */
@@ -959,39 +733,31 @@ body{
 
 .book-left.turn{
 
-    transform:
-        rotateY(-18deg);
+    transform:rotateY(-12deg);
 
 }
 
 .book-right.turn{
 
-    transform:
-        rotateY(18deg);
-
-}
-
-.page-changing{
-
-    opacity:.4;
+    transform:rotateY(12deg);
 
 }
 
 .fade-in{
 
-    animation:fadeIn .5s ease;
+    animation:fadeIn .4s ease;
 
 }
 
 .fade-out{
 
-    animation:fadeOut .5s ease;
+    animation:fadeOut .4s ease;
 
 }
 
 .zoom-in{
 
-    animation:zoomIn .4s ease;
+    animation:zoomIn .35s ease;
 
 }
 
@@ -1008,42 +774,15 @@ body{
 @keyframes floatBook{
 
     0%{
-
         transform:translateY(0);
-
     }
 
     50%{
-
         transform:translateY(-12px);
-
     }
 
     100%{
-
         transform:translateY(0);
-
-    }
-
-}
-
-@keyframes halo{
-
-    0%,
-    100%{
-
-        transform:scale(1);
-
-        opacity:.8;
-
-    }
-
-    50%{
-
-        transform:scale(1.08);
-
-        opacity:1;
-
     }
 
 }
@@ -1051,15 +790,11 @@ body{
 @keyframes fadeIn{
 
     from{
-
         opacity:0;
-
     }
 
     to{
-
         opacity:1;
-
     }
 
 }
@@ -1067,15 +802,11 @@ body{
 @keyframes fadeOut{
 
     from{
-
         opacity:1;
-
     }
 
     to{
-
         opacity:0;
-
     }
 
 }
@@ -1083,43 +814,30 @@ body{
 @keyframes zoomIn{
 
     from{
-
-        transform:scale(.95);
-
         opacity:0;
-
+        transform:scale(.97);
     }
 
     to{
-
-        transform:scale(1);
-
         opacity:1;
-
+        transform:scale(1);
     }
 
 }
 
 @keyframes goldGlow{
 
-    0%,
-    100%{
+    0%,100%{
 
         filter:
-
-            drop-shadow(
-                0 0 8px rgba(255,210,100,.30)
-            );
+        drop-shadow(0 0 6px rgba(255,215,120,.25));
 
     }
 
     50%{
 
         filter:
-
-            drop-shadow(
-                0 0 24px rgba(255,210,100,.75)
-            );
+        drop-shadow(0 0 18px rgba(255,215,120,.7));
 
     }
 
@@ -1129,19 +847,39 @@ body{
 /* RESPONSIVE */
 /* ================================================= */
 
-@media(max-width:1200px){
+@media (max-width:1600px){
 
     .book{
 
-        width:95vw;
-
-        height:760px;
+        width:92vw;
 
     }
 
 }
 
-@media(max-width:900px){
+@media (max-width:1400px){
+
+    .book{
+
+        width:95vw;
+
+    }
+
+    .chapter-title{
+
+        font-size:40px;
+
+    }
+
+    .chapter-text{
+
+        font-size:20px;
+
+    }
+
+}
+
+@media (max-width:1100px){
 
     body{
 
@@ -1159,9 +897,9 @@ body{
 
         flex-direction:column;
 
-        width:100%;
+        width:95vw;
 
-        height:auto;
+        aspect-ratio:auto;
 
     }
 
@@ -1181,29 +919,21 @@ body{
 
     .reader-navigation{
 
+        width:100%;
+
         flex-wrap:wrap;
 
-        gap:15px;
-
-        margin-top:25px;
-
-    }
-
-    .nav-button{
-
-        width:70px;
-
-        height:70px;
+        gap:16px;
 
     }
 
 }
 
-@media(max-width:600px){
+@media (max-width:700px){
 
     .book-cover{
 
-        width:260px;
+        width:250px;
 
     }
 
@@ -1217,54 +947,48 @@ body{
 
     }
 
-    .chapter-title{
+    .page-content{
 
-        font-size:34px;
+        padding:28px;
+
+    }
+
+    .chapter-number{
+
+        font-size:16px;
 
     }
 
     .chapter-title{
 
-    font-size:52px;
+        font-size:32px;
 
-    margin-bottom:35px;
+    }
 
-}
+    .chapter-text{
 
-    .summary-box,
-    .settings-box{
+        font-size:18px;
 
-        padding:25px;
+        line-height:1.8;
+
+    }
+
+    .chapter-text p:first-child::first-letter{
+
+        font-size:62px;
+
+    }
+
+    .nav-button{
+
+        width:64px;
+
+        height:64px;
 
     }
 
 }
-/* ================================================= */
-/* PAGE COUVERTURE */
-/* ================================================= */
-
-.cover-page{
-
-    padding:0 !important;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.cover-page .page-image{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
 
 /* ================================================= */
-/* FIN DU FICHIER */
+/* FIN */
 /* ================================================= */
