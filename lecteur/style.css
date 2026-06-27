@@ -745,5 +745,102 @@ body{
 
 }
 /* ================================================= */
+/* SOMMAIRE */
+/* ================================================= */
+.summary-window{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(10,10,20,.75);
+
+    backdrop-filter:blur(6px);
+
+    z-index:999;
+
+}
+
+.summary-box{
+
+    width:500px;
+
+    max-width:90%;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    background:#f8f3e8;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+
+}
+
+.summary-box h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:42px;
+
+}
+
+.summary-item{
+
+    width:100%;
+
+    margin-bottom:15px;
+
+    padding:16px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:24px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    background:#ede4d4;
+
+    transition:.3s;
+
+}
+
+.summary-item:hover{
+
+    background:#d8c19b;
+
+}
+
+.summary-close{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:16px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    background:#8b2d2d;
+
+    color:white;
+
+}
+
+/* ================================================= */
 /* RESPONSIVE */
 /* ================================================= */
