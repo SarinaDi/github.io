@@ -146,7 +146,246 @@ body{
     background:#cea35b;
 
 }
+/* ================================================= */
+/* LIVRE */
+/* ================================================= */
 
+.reader{
+
+    width:100%;
+    min-height:100vh;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.book{
+
+    position:relative;
+
+    display:flex;
+
+    width:min(1400px,95vw);
+
+    height:820px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#f8f3e8;
+
+    box-shadow:
+        0 45px 100px rgba(0,0,0,.60);
+
+}
+
+/* ================================================= */
+/* PAGES */
+/* ================================================= */
+
+.page{
+
+    width:50%;
+
+    position:relative;
+
+    padding:70px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.20),
+            rgba(255,255,255,.15)
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(0,0,0,.008) 0px,
+            rgba(0,0,0,.008) 1px,
+            transparent 1px,
+            transparent 6px
+        );
+
+}
+
+.book-left{
+
+    box-shadow:
+        inset -28px 0 32px rgba(0,0,0,.08),
+        inset -4px 0 8px rgba(0,0,0,.06);
+
+}
+
+.book-right{
+
+    box-shadow:
+        inset 28px 0 32px rgba(0,0,0,.08),
+        inset 4px 0 8px rgba(0,0,0,.06);
+
+}
+
+/* ================================================= */
+/* RELIURE */
+/* ================================================= */
+
+.spine{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:30px;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,.20),
+            rgba(255,255,255,.18),
+            rgba(0,0,0,.22)
+        );
+
+    box-shadow:
+        inset -6px 0 8px rgba(0,0,0,.18),
+        inset 6px 0 8px rgba(255,255,255,.25);
+
+}
+/* ================================================= */
+/* TITRES */
+/* ================================================= */
+
+.book-title{
+
+    text-align:center;
+
+    margin-top:60px;
+
+}
+
+.saga{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:#842b2b;
+
+}
+
+.subtitle{
+
+    margin-top:12px;
+
+    font-size:24px;
+
+    color:#6b6b6b;
+
+}
+
+.book-title h1{
+
+    margin-top:55px;
+
+    font-size:60px;
+
+    letter-spacing:4px;
+
+    color:#2b2b2b;
+
+}
+
+.book-title h2{
+
+    margin-top:15px;
+
+    font-size:36px;
+
+    font-weight:500;
+
+    color:#4a4a4a;
+
+}
+
+/* ================================================= */
+/* CHAPITRE */
+/* ================================================= */
+
+.chapter{
+
+    color:#2c2c2c;
+
+    font-size:28px;
+
+    line-height:2;
+
+}
+
+.chapter-number{
+
+    text-align:center;
+
+    color:#8b8b8b;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+
+}
+
+.chapter h3{
+
+    text-align:center;
+
+    font-size:46px;
+
+    margin-bottom:25px;
+
+    color:#222;
+
+}
+
+.separator{
+
+    width:220px;
+
+    height:2px;
+
+    margin:0 auto 40px;
+
+    background:#c6a567;
+
+}
+
+.chapter p{
+
+    text-align:justify;
+
+}
+
+.chapter p::first-letter{
+
+    float:left;
+
+    font-size:88px;
+
+    line-height:.8;
+
+    padding-right:10px;
+
+    color:#9b6a2b;
+
+    font-weight:bold;
+
+}
 /* ================================================= */
 /* ANIMATIONS */
 /* ================================================= */
