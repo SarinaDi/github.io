@@ -267,21 +267,17 @@ body{
 
     width:100%;
 
-    min-height:100vh;
+    height:100vh;
 
     display:none;
 
     flex-direction:column;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     align-items:center;
 
-    padding:70px 40px 110px;
-
-    opacity:0;
-
-    transition:opacity .8s;
+    padding-top:10px;
 
 }
 
@@ -297,25 +293,13 @@ body{
 
 .book{
 
-    position:relative;
+    width:min(88vw,1600px);
 
-    display:flex;
+    aspect-ratio:1.72 / 1;
 
-    width:min(92vw,1650px);
+    margin-top:10px;
 
-    aspect-ratio:1.58 / 1;
-
-    background:var(--paper);
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    margin:auto;
-
-    box-shadow:
-        0 35px 80px rgba(0,0,0,.45),
-        0 12px 25px rgba(0,0,0,.25);
+    margin-bottom:25px;
 
 }
 /* ================================================= */
@@ -677,7 +661,7 @@ body{
 
 .reader-navigation{
 
-    margin-top:35px;
+    margin-top:15px;
 
     display:flex;
 
