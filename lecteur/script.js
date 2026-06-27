@@ -209,6 +209,7 @@ function displayPage(page, side){
     image.src = page.image;
 
     image.style.display = "block";
+    image.parentElement.classList.add("cover-page");
 
     image.style.width = "90%";
 
@@ -234,6 +235,7 @@ function displayPage(page, side){
     else if(page.type==="chapter"){
 
         image.style.display="none";
+        image.parentElement.classList.remove("cover-page");
         pageNumber.style.display="block";
 
         chapter.style.display="block";
@@ -444,3 +446,29 @@ buildSummary();
 loadSavedPage();
 
 loadPages(currentPage);
+
+/* ================================================= */
+/* PAGE COUVERTURE */
+/* ================================================= */
+
+.cover-page{
+
+    padding:0 !important;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.cover-page .page-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
