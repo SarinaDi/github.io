@@ -349,17 +349,19 @@ body{
 
 .cover-page .page-image{
 
-    width:calc(100% - 16px);
-
-    height:calc(100% - 16px);
-
-    margin:2px;
-
     display:block;
+
+    width:auto;
+
+    height:100%;
+
+    max-width:100%;
 
     object-fit:contain;
 
     object-position:center;
+
+    margin:auto;
 
 }
 
