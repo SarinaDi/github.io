@@ -201,6 +201,10 @@ function displayPage(page, side){
         image.src = page.image;
 
         image.style.display = "block";
+        image.style.width = "";
+        image.style.height = "";
+        image.style.objectFit = "";
+        image.style.objectPosition = "";
 
         chapter.style.display = "none";
 
