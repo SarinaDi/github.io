@@ -1,4 +1,4 @@
-const tome1 = [
+const pages = [
 
     couverture,
 
