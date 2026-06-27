@@ -69,23 +69,21 @@ body{
 
 .book-cover{
 
-    width:430px;
-    max-width:90%;
+    width:370px;
 
     cursor:pointer;
 
     animation:floatBook 5s ease-in-out infinite;
 
     transition:
-        transform .35s,
-        filter .35s;
+        transform 1.2s ease,
+        opacity .8s ease,
+        filter 1s ease;
 
     filter:
-        drop-shadow(0 30px 45px rgba(0,0,0,.55))
-        drop-shadow(0 0 20px rgba(255,190,70,.18));
+        drop-shadow(0 30px 45px rgba(0,0,0,.55));
 
 }
-
 .book-cover:hover{
 
     transform:
@@ -606,6 +604,53 @@ body{
         opacity:1;
 
     }
+
+}
+/* ================================================= */
+/* ANIMATION D'OUVERTURE */
+/* ================================================= */
+
+.book-cover.opening{
+
+    animation:none;
+
+    transform:
+        perspective(1800px)
+        rotateY(-35deg)
+        translateX(-60px)
+        scale(1.20);
+
+    filter:
+        brightness(1.2)
+        drop-shadow(0 0 70px rgba(255,210,120,.70));
+
+}
+
+.home-screen{
+
+    transition:
+        opacity .8s ease;
+
+}
+
+.home-screen.hide{
+
+    opacity:0;
+
+}
+
+.reader{
+
+    opacity:0;
+
+    transition:
+        opacity .8s ease;
+
+}
+
+.reader.show{
+
+    opacity:1;
 
 }
 /* ================================================= */
