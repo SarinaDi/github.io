@@ -72,12 +72,43 @@ const nextButton = document.getElementById("nextPage");
 
 previousButton.addEventListener("click", () => {
 
-    console.log("Page précédente");
+    if(currentPage > 0){
+
+        currentPage--;
+
+        loadPage(currentPage);
+
+    }
 
 });
 
 nextButton.addEventListener("click", () => {
 
-    console.log("Page suivante");
+    if(currentPage < pages.length - 1){
+
+        currentPage++;
+
+        loadPage(currentPage);
+
+    }
 
 });
+// =================================================
+// CHARGER UNE PAGE
+// =================================================
+
+let currentPage = 0;
+
+function loadPage(index){
+
+    const page = pages[index];
+
+    chapterNumber.textContent = page.rightChapter;
+
+    chapterTitle.textContent = page.rightTitle;
+
+    chapterText.textContent = page.rightText;
+
+}
+
+loadPage(currentPage);
