@@ -35,7 +35,7 @@ body{
             rgba(18,14,35,.55),
             rgba(18,14,35,.72)
         ),
-        url("fond-bibliotheque.png");
+        url("../images/fond-bibliotheque.png");
 
     background-size:cover;
     background-position:center;
@@ -122,7 +122,7 @@ body{
     height:200px;
 
     background:
-        url("images/button-frame.png")
+        url("../images/button-frame.png")
         center
         center
         /100% 100%
