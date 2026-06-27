@@ -724,5 +724,26 @@ body{
 
 }
 /* ================================================= */
+/* ANIMATION DES PAGES */
+/* ================================================= */
+
+.page{
+
+    transition:
+        transform .6s ease,
+        opacity .6s ease;
+
+    transform-origin:center;
+
+}
+
+.page.page-changing{
+
+    opacity:0;
+
+    transform:scale(.97);
+
+}
+/* ================================================= */
 /* RESPONSIVE */
 /* ================================================= */
