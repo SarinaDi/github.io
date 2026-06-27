@@ -358,3 +358,24 @@ body{
     }
 
 }
+/* ============================= */
+/* Ouverture */
+/* ============================= */
+
+.cover.open{
+
+    animation:none;
+
+    transform:
+        perspective(1800px)
+        rotateY(-25deg)
+        translateX(-60px)
+        scale(1.18);
+
+    filter:
+        brightness(1.2)
+        drop-shadow(0 60px 100px rgba(255,210,120,.65));
+
+    transition:1s ease;
+
+}
