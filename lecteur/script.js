@@ -7,6 +7,8 @@ const chapterTitle = document.getElementById("chapterTitle");
 const chapterText = document.getElementById("chapterText");
 const leftTitle = document.getElementById("leftTitle");
 const leftSubtitle = document.getElementById("leftSubtitle");
+const leftPage = document.getElementById("pageLeft");
+const rightPage = document.getElementById("pageRight");
 
 // =================================================
 // DONNÉES DU LIVRE
@@ -77,17 +79,30 @@ let currentPage = 0;
 
 function loadPage(index){
 
-    const page = pages[index];
+    if(index < 0 || index >= pages.length){
+        return;
+    }
 
-    leftTitle.textContent = page.leftTitle;
+    leftPage.classList.add("page-changing");
+    rightPage.classList.add("page-changing");
 
-    leftSubtitle.textContent = page.leftSubtitle;
+    setTimeout(() => {
 
-    chapterNumber.textContent = page.rightChapter;
+        currentPage = index;
 
-    chapterTitle.textContent = page.rightTitle;
+        const page = pages[currentPage];
 
-    chapterText.textContent = page.rightText;
+        leftTitle.textContent = page.leftTitle;
+        leftSubtitle.textContent = page.leftSubtitle;
+
+        chapterNumber.textContent = page.rightChapter;
+        chapterTitle.textContent = page.rightTitle;
+        chapterText.textContent = page.rightText;
+
+        leftPage.classList.remove("page-changing");
+        rightPage.classList.remove("page-changing");
+
+    },300);
 
 }
 loadPage(currentPage);
