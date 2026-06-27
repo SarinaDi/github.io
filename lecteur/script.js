@@ -2,7 +2,7 @@
 // VARIABLES
 // =================================================
 
-let currentSpread = 0;
+let currentPage = 0;
 
 
 // =================================================
@@ -131,84 +131,90 @@ goHome.addEventListener("click", () => {
 // CHARGEMENT D'UNE DOUBLE PAGE
 // =================================================
 
-function loadSpread(index){
+// =================================================
+// CHARGEMENT DES PAGES
+// =================================================
 
-    if(index < 0 || index >= book.length){
+function loadPages(startPage){
 
-        return;
+    if(startPage < 0){
+
+        startPage = 0;
 
     }
 
-    currentSpread = index;
+    currentPage = startPage;
 
-    const spread = book[currentSpread];
+    const left = pages[startPage];
 
-    pageLeft.classList.add("turn");
+    const right = pages[startPage + 1];
 
-    pageRight.classList.add("turn");
+    // ========================
+    // PAGE GAUCHE
+    // ========================
 
-    setTimeout(() => {
+    if(left){
 
-        // ==========================
-        // PAGE GAUCHE
-        // ==========================
+        leftChapter.textContent = left.chapter || "";
 
-        leftChapter.textContent = spread.left.chapter || "";
+        leftTitle.textContent = left.title || "";
 
-        leftTitle.textContent = spread.left.title || "";
+        leftText.innerHTML = left.text || "";
 
-        leftText.innerHTML = spread.left.text || "";
+        leftPageNumber.textContent = startPage + 1;
 
-        // ==========================
-        // PAGE DROITE
-        // ==========================
+    }
 
-        rightChapter.textContent = spread.right.chapter || "";
+    // ========================
+    // PAGE DROITE
+    // ========================
 
-        rightTitle.textContent = spread.right.title || "";
+    if(right){
 
-        rightText.innerHTML = spread.right.text || "";
+        rightChapter.textContent = right.chapter || "";
 
-        // ==========================
-        // NUMÉROS
-        // ==========================
+        rightTitle.textContent = right.title || "";
 
-        leftPageNumber.textContent = currentSpread * 2 + 1;
+        rightText.innerHTML = right.text || "";
 
-        rightPageNumber.textContent = currentSpread * 2 + 2;
+        rightPageNumber.textContent = startPage + 2;
 
-        pageLeft.classList.remove("turn");
+    }else{
 
-        pageRight.classList.remove("turn");
+        rightChapter.textContent = "";
 
-    }, 350);
+        rightTitle.textContent = "";
+
+        rightText.innerHTML = "";
+
+        rightPageNumber.textContent = "";
+
+    }
 
 }
 // =================================================
 // NAVIGATION
 // =================================================
 
-previousButton.addEventListener("click", () => {
+previousButton.addEventListener("click",()=>{
 
-    if(currentSpread > 0){
+    if(currentPage >= 2){
 
-        loadSpread(currentSpread - 1);
-
-    }
-
-});
-
-nextButton.addEventListener("click", () => {
-
-    if(currentSpread < book.length - 1){
-
-        loadSpread(currentSpread + 1);
+        loadPages(currentPage - 2);
 
     }
 
 });
 
+nextButton.addEventListener("click",()=>{
 
+    if(currentPage + 2 < pages.length){
+
+        loadPages(currentPage + 2);
+
+    }
+
+});
 // =================================================
 // SOMMAIRE
 // =================================================
@@ -217,55 +223,39 @@ function buildSummary(){
 
     summaryList.innerHTML = "";
 
-    book.forEach((spread,index)=>{
+    pages.forEach((page,index)=>{
 
-        const button = document.createElement("button");
+    if(page.chapter === ""){
 
-        button.className = "summary-item";
+        return;
 
-        let title = "";
+    }
 
-        if(spread.right.chapter){
+    const button = document.createElement("button");
 
-            title = spread.right.chapter;
+    button.className = "summary-item";
+
+    button.textContent = page.chapter + " - " + page.title;
+
+    button.addEventListener("click",()=>{
+
+        let target = index;
+
+        if(target % 2 !== 0){
+
+            target--;
 
         }
 
-        if(spread.right.title){
+        loadPages(target);
 
-            title += " - " + spread.right.title;
-
-        }
-
-        button.textContent = title;
-
-        button.addEventListener("click",()=>{
-
-            loadSpread(index);
-
-            summaryWindow.style.display = "none";
-
-        });
-
-        summaryList.appendChild(button);
+        summaryWindow.style.display = "none";
 
     });
 
-}
-
-openSummary.addEventListener("click",()=>{
-
-    summaryWindow.style.display = "flex";
+    summaryList.appendChild(button);
 
 });
-
-closeSummary.addEventListener("click",()=>{
-
-    summaryWindow.style.display = "none";
-
-});
-
-
 // =================================================
 // PARAMÈTRES
 // =================================================
@@ -314,4 +304,4 @@ settingsWindow.addEventListener("click",(event)=>{
 
 buildSummary();
 
-loadSpread(0);
+loadPages(0);
