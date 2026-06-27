@@ -5,6 +5,8 @@ const book = document.getElementById("book");
 const chapterNumber = document.getElementById("chapterNumber");
 const chapterTitle = document.getElementById("chapterTitle");
 const chapterText = document.getElementById("chapterText");
+const leftTitle = document.getElementById("leftTitle");
+const leftSubtitle = document.getElementById("leftSubtitle");
 
 // =================================================
 // DONNÉES DU LIVRE
@@ -13,28 +15,44 @@ const chapterText = document.getElementById("chapterText");
 const pages = [
 
 {
-    leftTitle: "Tome I",
-    leftSubtitle: "Le Prince des Enfers",
 
-    rightChapter: "Chapitre I",
-    rightTitle: "Une paix fragile",
+leftTitle:"Tome I",
 
-    rightText:
-`Le royaume des Enfers n'était jamais réellement silencieux.
+leftSubtitle:"Le Prince des Enfers",
 
-Même lorsque les flammes semblaient s'endormir, les anciennes pierres murmuraient encore les souvenirs des âmes qui avaient traversé leurs portes.`
+rightChapter:"Chapitre I",
+
+rightTitle:"Une paix fragile",
+
+rightText:`Le royaume des Enfers n'était jamais réellement silencieux...`
 
 },
 
 {
-    leftTitle: "Tome I",
-    leftSubtitle: "Le Prince des Enfers",
 
-    rightChapter: "Chapitre II",
-    rightTitle: "Le prince",
+leftTitle:"Tome I",
 
-    rightText:
-`Kaël observait les flammes éternelles depuis le balcon du palais. Depuis toujours, ce royaume était le sien...`
+leftSubtitle:"Le Prince des Enfers",
+
+rightChapter:"Chapitre II",
+
+rightTitle:"Le Prince",
+
+rightText:`Kaël observait les flammes éternelles...`
+
+},
+
+{
+
+leftTitle:"Tome I",
+
+leftSubtitle:"Le Prince des Enfers",
+
+rightChapter:"Chapitre III",
+
+rightTitle:"La Rencontre",
+
+rightText:`Pour la première fois, Kaël aperçut Nayia...`
 
 }
 
@@ -103,6 +121,10 @@ function loadPage(index){
 
     const page = pages[index];
 
+    leftTitle.textContent = page.leftTitle;
+
+    leftSubtitle.textContent = page.leftSubtitle;
+
     chapterNumber.textContent = page.rightChapter;
 
     chapterTitle.textContent = page.rightTitle;
@@ -110,5 +132,4 @@ function loadPage(index){
     chapterText.textContent = page.rightText;
 
 }
-
 loadPage(currentPage);
