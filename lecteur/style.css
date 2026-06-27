@@ -301,21 +301,21 @@ body{
 
     display:flex;
 
-    width:min(1450px,88vw);
+    width:min(92vw,1650px);
 
-    aspect-ratio:1.55/1;
+    aspect-ratio:1.58 / 1;
 
-    max-height:90vh;
+    background:var(--paper);
 
-    background:#f6f0e4;
-
-    border-radius:22px;
+    border-radius:24px;
 
     overflow:hidden;
 
+    margin:auto;
+
     box-shadow:
-        0 35px 90px rgba(0,0,0,.45),
-        0 15px 35px rgba(0,0,0,.25);
+        0 35px 80px rgba(0,0,0,.45),
+        0 12px 25px rgba(0,0,0,.25);
 
 }
 /* ================================================= */
@@ -351,10 +351,6 @@ body{
     object-fit:cover;
 
 }
-/* ================================================= */
-/* RELIURE */
-/* ================================================= */
-
 .spine{
 
     position:absolute;
@@ -365,29 +361,26 @@ body{
 
     transform:translateX(-50%);
 
-    width:36px;
+    width:26px;
 
     height:100%;
 
     background:
 
-        linear-gradient(
-            to right,
-            #8d8d8d,
-            #ececec,
-            #8d8d8d
-        );
+    linear-gradient(
+        to right,
+        #7b7b7b,
+        #efefef,
+        #8b8b8b
+    );
 
     box-shadow:
-
-        inset -5px 0 8px rgba(0,0,0,.2),
-
-        inset 5px 0 8px rgba(255,255,255,.4);
+        inset -5px 0 8px rgba(0,0,0,.25),
+        inset 5px 0 8px rgba(255,255,255,.35);
 
     z-index:50;
 
 }
-
 /* ================================================= */
 /* ÉPAISSEUR DES PAGES */
 /* ================================================= */
@@ -474,41 +467,26 @@ body{
 
     width:50%;
 
-    background:#f9f4ea;
-
     overflow:hidden;
 
-    padding:45px;
+    background:var(--paper);
 
-    display:flex;
-
-    flex-direction:column;
+    transform-style:preserve-3d;
 
 }
 .book-left{
 
-    transform-origin:right center;
-
     box-shadow:
-
-        inset -28px 0 32px rgba(0,0,0,.08),
-
-        inset -4px 0 8px rgba(0,0,0,.06);
+        inset -18px 0 30px rgba(0,0,0,.08);
 
 }
 
 .book-right{
 
-    transform-origin:left center;
-
     box-shadow:
-
-        inset 28px 0 32px rgba(0,0,0,.08),
-
-        inset 4px 0 8px rgba(0,0,0,.06);
+        inset 18px 0 30px rgba(0,0,0,.08);
 
 }
-
 /* ================================================= */
 /* CONTENU DES PAGES */
 /* ================================================= */
@@ -523,7 +501,7 @@ body{
 
     flex-direction:column;
 
-    padding:28px 38px;
+    padding:clamp(40px,4vw,70px);
 
 }
 
