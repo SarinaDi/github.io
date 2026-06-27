@@ -9,70 +9,120 @@ let currentSpread = 0;
 // ÉLÉMENTS HTML
 // =================================================
 
-// Accueil
+// ---------- Accueil ----------
+
+const homeScreen = document.getElementById("homeScreen");
+
+const reader = document.getElementById("reader");
 
 const openButton = document.getElementById("openBook");
-const homeScreen = document.querySelector(".home-screen");
-const reader = document.getElementById("reader");
+
 const bookCover = document.getElementById("book");
 
-// Navigation
-
-const previousButton = document.getElementById("previousPage");
-const nextButton = document.getElementById("nextPage");
-
-const openSummary = document.getElementById("openSummary");
-const closeSummary = document.getElementById("closeSummary");
-
-const summaryWindow = document.getElementById("summaryWindow");
-const summaryList = document.getElementById("summaryList");
-
-// Pages
+// ---------- Livre ----------
 
 const pageLeft = document.getElementById("pageLeft");
+
 const pageRight = document.getElementById("pageRight");
 
-// ---------- Page gauche ----------
+// ---------- Contenu gauche ----------
 
 const leftChapter = document.getElementById("leftChapter");
+
 const leftTitle = document.getElementById("leftTitle");
+
 const leftText = document.getElementById("leftText");
 
-// ---------- Page droite ----------
+// ---------- Contenu droite ----------
 
 const rightChapter = document.getElementById("rightChapter");
+
 const rightTitle = document.getElementById("rightTitle");
+
 const rightText = document.getElementById("rightText");
 
 // ---------- Numéros ----------
 
 const leftPageNumber = document.getElementById("leftPageNumber");
+
 const rightPageNumber = document.getElementById("rightPageNumber");
 
+// ---------- Navigation ----------
+
+const previousButton = document.getElementById("previousPage");
+
+const nextButton = document.getElementById("nextPage");
+
+const goHome = document.getElementById("goHome");
+
+// ---------- Sommaire ----------
+
+const summaryWindow = document.getElementById("summaryWindow");
+
+const summaryList = document.getElementById("summaryList");
+
+const openSummary = document.getElementById("openSummary");
+
+const closeSummary = document.getElementById("closeSummary");
+
+// ---------- Paramètres ----------
+
+const settingsWindow = document.getElementById("settingsWindow");
+
+const openSettings = document.getElementById("openSettings");
+
+const closeSettings = document.getElementById("closeSettings");
 
 // =================================================
 // OUVERTURE DU LIVRE
 // =================================================
 
-openButton.addEventListener("click",()=>{
+openButton.addEventListener("click", () => {
 
     bookCover.classList.add("opening");
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
         homeScreen.classList.add("hide");
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            homeScreen.style.display="none";
+            homeScreen.style.display = "none";
 
-            reader.style.display="flex";
+            reader.style.display = "flex";
 
             reader.classList.add("show");
 
-        },700);
+        }, 700);
 
-    },1200);
+    }, 1200);
+
+});
+
+
+// =================================================
+// FERMETURE DU LIVRE
+// =================================================
+
+goHome.addEventListener("click", () => {
+
+    reader.classList.remove("show");
+
+    setTimeout(() => {
+
+        reader.style.display = "none";
+
+        homeScreen.style.display = "flex";
+
+        setTimeout(() => {
+
+            homeScreen.classList.remove("hide");
+
+            bookCover.classList.remove("opening");
+
+        }, 50);
+
+    }, 600);
 
 });
 
@@ -94,63 +144,65 @@ function loadSpread(index){
     const spread = book[currentSpread];
 
     pageLeft.classList.add("turn");
+
     pageRight.classList.add("turn");
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        // ===========================
+        // ==========================
         // PAGE GAUCHE
-        // ===========================
+        // ==========================
 
         leftChapter.textContent = spread.left.chapter || "";
 
         leftTitle.textContent = spread.left.title || "";
 
-        leftText.textContent = spread.left.text || "";
+        leftText.innerHTML = spread.left.text || "";
 
-        // ===========================
+        // ==========================
         // PAGE DROITE
-        // ===========================
+        // ==========================
 
         rightChapter.textContent = spread.right.chapter || "";
 
         rightTitle.textContent = spread.right.title || "";
 
-        rightText.textContent = spread.right.text || "";
+        rightText.innerHTML = spread.right.text || "";
 
-        // ===========================
-        // NUMÉROS DE PAGE
-        // ===========================
+        // ==========================
+        // NUMÉROS
+        // ==========================
 
         leftPageNumber.textContent = currentSpread * 2 + 1;
 
         rightPageNumber.textContent = currentSpread * 2 + 2;
 
         pageLeft.classList.remove("turn");
+
         pageRight.classList.remove("turn");
 
-    },300);
+    }, 350);
 
 }
 // =================================================
 // NAVIGATION
 // =================================================
 
-previousButton.addEventListener("click",()=>{
+previousButton.addEventListener("click", () => {
 
-    if(currentSpread>0){
+    if(currentSpread > 0){
 
-        loadSpread(currentSpread-1);
+        loadSpread(currentSpread - 1);
 
     }
 
 });
 
-nextButton.addEventListener("click",()=>{
+nextButton.addEventListener("click", () => {
 
-    if(currentSpread<book.length-1){
+    if(currentSpread < book.length - 1){
 
-        loadSpread(currentSpread+1);
+        loadSpread(currentSpread + 1);
 
     }
 
@@ -163,27 +215,37 @@ nextButton.addEventListener("click",()=>{
 
 function buildSummary(){
 
-    summaryList.innerHTML="";
+    summaryList.innerHTML = "";
 
     book.forEach((spread,index)=>{
 
-        if(!spread.right) return;
+        const button = document.createElement("button");
 
-        const button=document.createElement("button");
+        button.className = "summary-item";
 
-        button.className="summary-item";
+        let title = "";
 
-        button.textContent=
+        if(spread.right.chapter){
 
-            spread.right.chapter+" - "+spread.right.title;
+            title = spread.right.chapter;
 
-        button.onclick=()=>{
+        }
+
+        if(spread.right.title){
+
+            title += " - " + spread.right.title;
+
+        }
+
+        button.textContent = title;
+
+        button.addEventListener("click",()=>{
 
             loadSpread(index);
 
-            summaryWindow.style.display="none";
+            summaryWindow.style.display = "none";
 
-        };
+        });
 
         summaryList.appendChild(button);
 
@@ -191,36 +253,59 @@ function buildSummary(){
 
 }
 
-openSummary.onclick=()=>{
+openSummary.addEventListener("click",()=>{
 
-    summaryWindow.style.display="flex";
+    summaryWindow.style.display = "flex";
 
-};
+});
 
-closeSummary.onclick=()=>{
+closeSummary.addEventListener("click",()=>{
 
-    summaryWindow.style.display="none";
+    summaryWindow.style.display = "none";
 
-};
+});
+
+
 // =================================================
 // PARAMÈTRES
 // =================================================
 
-// À venir
+openSettings.addEventListener("click",()=>{
+
+    settingsWindow.style.display="flex";
+
+});
+
+closeSettings.addEventListener("click",()=>{
+
+    settingsWindow.style.display="none";
+
+});
 
 
 // =================================================
-// SAUVEGARDE
+// FERMETURE DES FENÊTRES
 // =================================================
 
-// À venir
+summaryWindow.addEventListener("click",(event)=>{
 
+    if(event.target===summaryWindow){
 
-// =================================================
-// ANIMATIONS
-// =================================================
+        summaryWindow.style.display="none";
 
-// À venir
+    }
+
+});
+
+settingsWindow.addEventListener("click",(event)=>{
+
+    if(event.target===settingsWindow){
+
+        settingsWindow.style.display="none";
+
+    }
+
+});
 
 
 // =================================================
