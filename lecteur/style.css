@@ -275,3 +275,54 @@ body{
 .reader{
     display:none;
 }
+.home{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:35px;
+}
+
+.cover{
+    width:360px;
+    transition:.35s;
+    cursor:pointer;
+
+    filter:drop-shadow(0 25px 40px rgba(0,0,0,.55));
+}
+
+.cover:hover{
+    transform:
+        translateY(-10px)
+        scale(1.03);
+}
+
+.open-book{
+
+    padding:18px 55px;
+
+    font-size:30px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:#f3d287;
+
+    background:rgba(25,18,40,.90);
+
+    border:2px solid #c79b45;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.open-book:hover{
+
+    background:#c79b45;
+
+    color:#24182f;
+
+    transform:scale(1.05);
+
+}
