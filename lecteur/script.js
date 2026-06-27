@@ -40,7 +40,7 @@ const nextButton = document.getElementById("nextPage");
 const summaryWindow = document.getElementById("summaryWindow");
 const openSummary = document.getElementById("openSummary");
 const closeSummary = document.getElementById("closeSummary");
-
+const summaryList = document.getElementById("summaryList");
 
 // =================================================
 // OUVERTURE DU LIVRE
@@ -136,27 +136,44 @@ nextButton.addEventListener("click", () => {
 // SOMMAIRE
 // =================================================
 
-if(openSummary && summaryWindow){
+function buildSummary(){
 
-    openSummary.addEventListener("click", () => {
+    summaryList.innerHTML = "";
 
-        summaryWindow.style.display = "flex";
+    pages.forEach((page,index)=>{
+
+        const button = document.createElement("button");
+
+        button.className = "summary-item";
+
+        button.textContent =
+            page.rightChapter + " - " + page.rightTitle;
+
+        button.addEventListener("click",()=>{
+
+            loadPage(index);
+
+            summaryWindow.style.display="none";
+
+        });
+
+        summaryList.appendChild(button);
 
     });
 
 }
 
-if(closeSummary && summaryWindow){
+openSummary.addEventListener("click",()=>{
 
-    closeSummary.addEventListener("click", () => {
+    summaryWindow.style.display="flex";
 
-        summaryWindow.style.display = "none";
+});
 
-    });
+closeSummary.addEventListener("click",()=>{
 
-}
+    summaryWindow.style.display="none";
 
-
+});
 // =================================================
 // PARAMÈTRES
 // =================================================
@@ -181,5 +198,7 @@ if(closeSummary && summaryWindow){
 // =================================================
 // DÉMARRAGE
 // =================================================
+
+buildSummary();
 
 loadPage(0);
