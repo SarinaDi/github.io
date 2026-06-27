@@ -2,7 +2,7 @@
 // VARIABLES
 // =================================================
 
-let currentPage = 0;
+let currentSpread = 0;
 
 
 // =================================================
@@ -14,57 +14,58 @@ let currentPage = 0;
 const openButton = document.getElementById("openBook");
 const homeScreen = document.querySelector(".home-screen");
 const reader = document.getElementById("reader");
-const book = document.getElementById("book");
-
-// Pages
-
-const leftPage = document.getElementById("pageLeft");
-const rightPage = document.getElementById("pageRight");
-
-// Contenu
-
-const leftTitle = document.getElementById("leftTitle");
-const leftSubtitle = document.getElementById("leftSubtitle");
-
-const chapterNumber = document.getElementById("chapterNumber");
-const chapterTitle = document.getElementById("chapterTitle");
-const chapterText = document.getElementById("chapterText");
+const bookCover = document.getElementById("book");
 
 // Navigation
 
 const previousButton = document.getElementById("previousPage");
 const nextButton = document.getElementById("nextPage");
 
-// Sommaire
-
-const summaryWindow = document.getElementById("summaryWindow");
 const openSummary = document.getElementById("openSummary");
 const closeSummary = document.getElementById("closeSummary");
+
+const summaryWindow = document.getElementById("summaryWindow");
 const summaryList = document.getElementById("summaryList");
+
+// Pages
+
+const pageLeft = document.getElementById("pageLeft");
+const pageRight = document.getElementById("pageRight");
+
+// Contenu gauche
+
+const leftTitle = document.getElementById("leftTitle");
+const leftSubtitle = document.getElementById("leftSubtitle");
+
+// Contenu droite
+
+const chapterNumber = document.getElementById("chapterNumber");
+const chapterTitle = document.getElementById("chapterTitle");
+const chapterText = document.getElementById("chapterText");
 
 // =================================================
 // OUVERTURE DU LIVRE
 // =================================================
 
-openButton.addEventListener("click", () => {
+openButton.addEventListener("click",()=>{
 
-    book.classList.add("opening");
+    bookCover.classList.add("opening");
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         homeScreen.classList.add("hide");
 
-        setTimeout(() => {
+        setTimeout(()=>{
 
-            homeScreen.style.display = "none";
+            homeScreen.style.display="none";
 
-            reader.style.display = "flex";
+            reader.style.display="flex";
 
             reader.classList.add("show");
 
-        }, 700);
+        },700);
 
-    }, 1200);
+    },1200);
 
 });
 
@@ -73,59 +74,70 @@ openButton.addEventListener("click", () => {
 // GESTION DES PAGES
 // =================================================
 
-function loadPage(index){
+function loadSpread(index){
 
-    if(index < 0 || index >= pages.length){
+    if(index < 0 || index >= book.length){
+
         return;
+
     }
 
-    leftPage.classList.add("page-changing");
-    rightPage.classList.add("page-changing");
+    currentSpread = index;
 
-    setTimeout(() => {
+    const spread = book[currentSpread];
 
-        currentPage = index;
+    pageLeft.classList.add("page-changing");
+    pageRight.classList.add("page-changing");
 
-        const page = pages[currentPage];
+    setTimeout(()=>{
 
-        // Page gauche
+        // -------- PAGE GAUCHE --------
 
-        leftTitle.textContent = page.leftTitle;
-        leftSubtitle.textContent = page.leftSubtitle;
+        if(spread.left.title){
 
-        // Page droite
+            leftTitle.textContent = spread.left.title;
 
-        chapterNumber.textContent = page.rightChapter;
-        chapterTitle.textContent = page.rightTitle;
-        chapterText.textContent = page.rightText;
+        }
 
-        leftPage.classList.remove("page-changing");
-        rightPage.classList.remove("page-changing");
+        if(spread.left.subtitle){
+
+            leftSubtitle.textContent = spread.left.subtitle;
+
+        }
+
+        // -------- PAGE DROITE --------
+
+        chapterNumber.textContent = spread.right.chapter;
+
+        chapterTitle.textContent = spread.right.title;
+
+        chapterText.textContent = spread.right.text;
+
+        pageLeft.classList.remove("page-changing");
+        pageRight.classList.remove("page-changing");
 
     },300);
 
 }
-
-
 // =================================================
 // NAVIGATION
 // =================================================
 
-previousButton.addEventListener("click", () => {
+previousButton.addEventListener("click",()=>{
 
-    if(currentPage > 0){
+    if(currentSpread>0){
 
-        loadPage(currentPage - 1);
+        loadSpread(currentSpread-1);
 
     }
 
 });
 
-nextButton.addEventListener("click", () => {
+nextButton.addEventListener("click",()=>{
 
-    if(currentPage < pages.length - 1){
+    if(currentSpread<book.length-1){
 
-        loadPage(currentPage + 1);
+        loadSpread(currentSpread+1);
 
     }
 
@@ -138,24 +150,27 @@ nextButton.addEventListener("click", () => {
 
 function buildSummary(){
 
-    summaryList.innerHTML = "";
+    summaryList.innerHTML="";
 
-    pages.forEach((page,index)=>{
+    book.forEach((spread,index)=>{
 
-        const button = document.createElement("button");
+        if(!spread.right) return;
 
-        button.className = "summary-item";
+        const button=document.createElement("button");
 
-        button.textContent =
-            page.rightChapter + " - " + page.rightTitle;
+        button.className="summary-item";
 
-        button.addEventListener("click",()=>{
+        button.textContent=
 
-            loadPage(index);
+            spread.right.chapter+" - "+spread.right.title;
+
+        button.onclick=()=>{
+
+            loadSpread(index);
 
             summaryWindow.style.display="none";
 
-        });
+        };
 
         summaryList.appendChild(button);
 
@@ -163,17 +178,17 @@ function buildSummary(){
 
 }
 
-openSummary.addEventListener("click",()=>{
+openSummary.onclick=()=>{
 
     summaryWindow.style.display="flex";
 
-});
+};
 
-closeSummary.addEventListener("click",()=>{
+closeSummary.onclick=()=>{
 
     summaryWindow.style.display="none";
 
-});
+};
 // =================================================
 // PARAMÈTRES
 // =================================================
@@ -201,4 +216,4 @@ closeSummary.addEventListener("click",()=>{
 
 buildSummary();
 
-loadPage(0);
+loadSpread(0);
