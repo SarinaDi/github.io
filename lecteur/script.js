@@ -461,28 +461,4 @@ loadSavedPage();
 
 loadPages(currentPage);
 
-/* ================================================= */
-/* PAGE COUVERTURE */
-/* ================================================= */
 
-.cover-page{
-
-    padding:0 !important;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.cover-page .page-image{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
