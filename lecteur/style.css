@@ -243,12 +243,13 @@ body{
 .book{
 
     position:relative;
+
     display:flex;
 
-    width:84vw;
-    max-width:1550px;
+    width:95vw;
+    max-width:1700px;
 
-    height:950px;
+    height:900px;
 
     background:var(--paper);
 
@@ -260,11 +261,7 @@ body{
         0 35px 70px rgba(0,0,0,.40),
         0 15px 30px rgba(0,0,0,.22);
 
-    transform:none;
-
 }
-
-
 /* ================================================= */
 /* RELIURE */
 /* ================================================= */
