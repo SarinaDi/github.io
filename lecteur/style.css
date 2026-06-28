@@ -121,13 +121,47 @@ body{
 
 .book-cover.opening{
 
-    animation:none;
+    animation:bookOpen .9s ease forwards;
 
-    transform:
-        perspective(1800px)
-        rotateY(-35deg)
-        translateX(-60px)
-        scale(1.15);
+}
+
+@keyframes bookOpen{
+
+    0%{
+
+        transform:
+            perspective(1800px)
+            rotateY(0deg)
+            translateY(0)
+            scale(1);
+
+        opacity:1;
+
+    }
+
+    40%{
+
+        transform:
+            perspective(1800px)
+            rotateY(-8deg)
+            translateY(-6px)
+            scale(1.02);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            perspective(1800px)
+            rotateY(-18deg)
+            translateY(-12px)
+            scale(1.05);
+
+        opacity:0;
+
+    }
 
 }
 
