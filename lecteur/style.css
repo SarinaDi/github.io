@@ -347,7 +347,7 @@ body{
 
     height:100%;
 
-    padding:40px 45px;
+    padding:42px 48px;
 
     display:flex;
 
@@ -425,15 +425,15 @@ body{
 
     text-align:center;
 
-    font-size:34px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:36px;
 
     font-weight:600;
 
-    color:#2d2b28;
-
     margin-top:15px;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
 }
 
@@ -459,22 +459,32 @@ body{
 
     width:100%;
 
-    font-size:18px;
+    font-family:"EB Garamond",serif;
 
-    line-height:1.8;
+    font-size:17px;
 
-    color:var(--text);
+    line-height:1.75;
+
+    color:#2d2b28;
 
     text-align:justify;
+
+    hyphens:auto;
 
 }
 
 .chapter-text p{
 
-    margin-bottom:22px;
+    margin-bottom:16px;
+
+    text-indent:32px;
 
 }
+.chapter-text p:first-child{
 
+    text-indent:0;
+
+}
 /* ================================================= */
 /* LETTRINE */
 /* ================================================= */
@@ -483,20 +493,21 @@ body{
 
     float:left;
 
-    font-size:58px;
+    font-family:"Cormorant Garamond",serif;
 
-    line-height:.8;
+    font-size:68px;
 
-    margin-right:8px;
+    line-height:.82;
 
-    margin-top:6px;
+    margin-right:10px;
 
-    color:#a36e2b;
+    margin-top:5px;
 
-    font-weight:bold;
+    color:#9b6a2b;
+
+    font-weight:700;
 
 }
-
 /* ================================================= */
 /* NUMÉROS */
 /* ================================================= */
