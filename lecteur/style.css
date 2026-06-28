@@ -491,13 +491,17 @@ repeating-linear-gradient(
 
 .page-image{
 
-    width:100%;
+    width:90%;
 
-    height:100%;
+    height:90%;
 
-    object-fit:cover;
+    object-fit:contain;
 
     object-position:center;
+
+    display:block;
+
+    margin:auto;
 
 }
 
