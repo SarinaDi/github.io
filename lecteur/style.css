@@ -264,6 +264,77 @@ body{
 
 }
 /* ================================================= */
+/* TRANCHES DES PAGES */
+/* ================================================= */
+
+.page-stack-left{
+
+    position:absolute;
+
+    left:0;
+
+    top:18px;
+
+    width:28px;
+
+    height:calc(100% - 36px);
+
+    z-index:5;
+
+    background:
+
+    repeating-linear-gradient(
+
+        to right,
+
+        #d8d0bf 0px,
+
+        #f8f6ef 2px,
+
+        #cfc6b5 3px,
+
+        #f7f4eb 4px
+
+    );
+
+    border-radius:10px 0 0 10px;
+
+}
+
+.page-stack-right{
+
+    position:absolute;
+
+    right:0;
+
+    top:18px;
+
+    width:28px;
+
+    height:calc(100% - 36px);
+
+    z-index:5;
+
+    background:
+
+    repeating-linear-gradient(
+
+        to left,
+
+        #d8d0bf 0px,
+
+        #f8f6ef 2px,
+
+        #cfc6b5 3px,
+
+        #f7f4eb 4px
+
+    );
+
+    border-radius:0 10px 10px 0;
+
+}
+/* ================================================= */
 /* RELIURE */
 /* ================================================= */
 
@@ -323,6 +394,7 @@ body{
     align-items:center;
 
     overflow:hidden;
+    z-index:20;
 
     background:
 
