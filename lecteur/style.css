@@ -243,10 +243,10 @@ body{
 .book{
 
     position:relative;
-
     display:flex;
 
-    width:1780px;
+    width:94vw;
+    max-width:1780px;
 
     height:950px;
 
@@ -259,8 +259,8 @@ body{
     box-shadow:
         0 35px 70px rgba(0,0,0,.40),
         0 15px 30px rgba(0,0,0,.22);
-    
-    transform:scale(0.85);
+
+    transform:scale(0.90);
 
 }
 
