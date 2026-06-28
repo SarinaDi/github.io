@@ -246,9 +246,9 @@ body{
 
     display:flex;
 
-    width:min(1750px,94vw);
+    width:1780px;
 
-    height:min(880px,88vh);
+    height:950px;
 
     background:var(--paper);
 
